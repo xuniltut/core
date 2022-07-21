@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/xuniltut/core/issues"
   },
-  "homepage": "https://github.com/xuniltut/core#readme"
+  "homepage": "https://github.com/xuniltut/core#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.1"
+  }
 }
