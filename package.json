@@ -21,6 +21,7 @@
   "homepage": "https://github.com/xuniltut/core#readme",
   "dependencies": {
     "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@rx1310/grid-v4": "^4.4.2",
     "@rx1310/kalium19": "^4.1.0-release",
     "js-yaml": "^4.1.0",
