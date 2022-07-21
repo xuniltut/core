@@ -1,0 +1,22 @@
+{
+  "name": "@xuniltut/core",
+  "description": "основной репозиторий проекта TutLinux, который содержит в себе все стили, конфигурации, шаблоны... короче говоря, всё кроме контента.",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuniltut/core.git"
+  },
+  "engines": {
+    "node": ">= 16.15.0"
+  },
+  "author": {
+    "name": "Haba Kudzaev (rx1310)",
+    "email": "rx1310@inbox.ru",
+    "url": "https://rx1310.site"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xuniltut/core/issues"
+  },
+  "homepage": "https://github.com/xuniltut/core#readme"
+}
