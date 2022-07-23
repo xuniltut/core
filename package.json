@@ -2,9 +2,9 @@
   "name": "@xuniltut/core",
   "description": "основной репозиторий проекта TutLinux, который содержит в себе все стили, конфигурации, шаблоны... короче говоря, всё кроме контента.",
   "private": true,
-	"scripts": {
-    "start": "run-p watch:11ty watch:sass",
-    "build": "run-s build:sass build:11ty",
+  "scripts": {
+    "start": "cross-env ELEVENTY_ENV=dev run-p watch:11ty watch:sass",
+    "build": "cross-env ELEVENTY_ENV=prod run-s build:sass build:11ty",
     "build:11ty": "npx @11ty/eleventy --config=11ty.config.js",
     "build:sass": "sass @styles/:dist/styles/ --style compressed",
     "watch:11ty": "npx @11ty/eleventy --serve --config=11ty.config.js",
@@ -33,6 +33,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@rx1310/grid-v4": "^4.4.2",
     "@rx1310/kalium19": "^4.1.1",
+    "cross-env": "^7.0.3",
     "js-yaml": "^4.1.0",
     "markdown-it": "^13.0.1",
     "npm-run-all": "^4.1.5",

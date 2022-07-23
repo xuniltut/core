@@ -1,0 +1,11 @@
+{
+	"Условие ENV": {
+		"scope": "njk",
+		"prefix": "env",
+		"body": [
+			"{% if meta.env == '${1|dev,prod|}' %}",
+			"$2",
+			"{% endif %}"
+		]
+	}
+}
