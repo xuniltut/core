@@ -1,0 +1,28 @@
+@use 'sass:math';
+@use '../../node_modules/@rx1310/grid-v4/grid-v4' as * with (
+
+	$grid-breakpoints: (
+		xs: 0,
+		sm: 576px,
+		md: 768px,
+		lg: 992px,
+		xl: 1200px
+	),
+
+	$container-max-widths: (
+		sm: 540px,
+		md: 720px,
+		lg: 960px,
+		xl: 1140px
+	),
+
+	$grid-columns: 12,
+	$grid-gutter-width: 30px,
+	$grid-row-columns: 6,
+	$enable-grid-classes: true,
+	$spacer: 1rem,
+	$grid-genSpacersUtils: false,
+	$grid-genFlexUtils: false,
+	$grid-minimalReset: false,
+
+);
