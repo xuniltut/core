@@ -1,0 +1,12 @@
+@use 'kalium19' as k19;
+
+$root: (
+	colorFont: k19.$grey--900,
+	colorBackground: k19.$grey--100,
+
+	// Header
+	colorHeaderBackground: k19.$grey--A100
+);
+
+@include k19.props($root, true);
+

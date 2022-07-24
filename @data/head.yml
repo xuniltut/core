@@ -15,7 +15,6 @@ app_name      : "TutLinux"
 robots        : "index,follow" # `null`, если не хотите использовать
 theme_color   : "#ffffff"
 color_scheme  : "dark light"
-gfonts_preload: true
 
 # ? Аналитика
 # * {string} google_analytics: ID GA (напр.: UA-12345678-9)
