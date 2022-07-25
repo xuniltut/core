@@ -2,84 +2,65 @@
 @use '../../vars' as *;
 @use 'wrapper' as *;
 
-/// @name topbar
-/// @access public
+/// Стили для элемента TopBar
+/// @name TopBar
 /// @since 2.0.0
-/// @author Haba Kudzaev (rx1310)
-/// @link https://github.com/rx1310 GitHub
-/// @require {mixin} b из пакета `@rx1310/kalium19`
-/// @require {mixin} e из пакета `@rx1310/kalium19`
-/// @require {mixin} m из пакета `@rx1310/kalium19`
-/// @require {mixin} flex из пакета `@rx1310/kalium19`
-/// @require {mixin} justify-content из пакета `@rx1310/kalium19`
-/// @require {mixin} align-items из пакета `@rx1310/kalium19`
+/// @access public
+/// @require {lib} kalium19
 @include k19.b(topbar) {
 
-	padding: .5em 0;
+	padding: .5em 0; // устанавливаю отступ сверху и снизу на 0.5em и обнуляю по бокам
 
-	@include k19.flex();
-	@include k19.justify-content(space-between);
-	@include k19.align-items(center);
+	@include k19.flex(); // устанавливаю `display: flex`
+	@include k19.justify-content(space-between); // флексы равномерно распределяются по всей строке (первый и последний элемент прижимаются к соответствующим краям контейнера)
+	@include k19.align-items(center); // флексы выравниваются по линии поперечной оси.
 
-	/// @name title
-	/// @access public
+	/// Стили для элемента TopBar Title
+	/// @name Title
+	/// @group TopBar
 	/// @since 2.0.0
-	/// @author Haba Kudzaev (rx1310)
-	/// @link https://github.com/rx1310 GitHub
-	/// @require {mixin} e из пакета `@rx1310/kalium19`
-	/// @require {mixin} transition из пакета `@rx1310/kalium19`
+	/// @access public
 	@include k19.e(title) {
 
-		margin        : 0;
-		font-size     : $font-size_h6;
-		color         : inherit;
-		text-transform: lowercase;
+		margin        : 0; // обнуляю внешние отступы
+		font-size     : $font-size_h6; // устанавливаю размер шрифта
+		color         : inherit; // цвет текста по умолчанию (от род. элемента)
+		text-transform: lowercase; // текст начинается со строчной буквы
 
-		&.hidden { color: transparent; }
+		&.hidden { color: transparent; } // скрываю текст, делая цвет шрифта прозрачным
 
-		@include k19.transition(color $transition-duration);
+		@include k19.transition(color $transition-duration); // указываю время перехода (`transition`) для свойства `color`
 
 	}
 
-	/// @name action
-	/// @access public
+	/// Стили для элемента TopBar Action
+	/// @name Action
+	/// @group TopBar
 	/// @since 2.0.0
-	/// @author Haba Kudzaev (rx1310)
-	/// @link https://github.com/rx1310 GitHub
-	/// @require {mixin} e из пакета `@rx1310/kalium19`
-	/// @require {mixin} m из пакета `@rx1310/kalium19`
-	/// @require {mixin} props-apply из пакета `@rx1310/kalium19`
-	/// @require {mixin} flex из пакета `@rx1310/kalium19`
-	/// @require {mixin} justify-content из пакета `@rx1310/kalium19`
-	/// @require {mixin} align-items из пакета `@rx1310/kalium19`
-	/// @require {mixin} border-radius из пакета `@rx1310/kalium19`
-	/// @require {mixin} wh из пакета `@rx1310/kalium19`
-	/// @require {mixin} transition из пакета `@rx1310/kalium19`
-	/// @require {mixin} wh из пакета `@rx1310/kalium19`
-	/// @require {mixin} position-absolute из пакета `@rx1310/kalium19`
+	/// @access public
 	@include k19.e(action) {
 
-		vertical-align : middle;
-		position       : relative;
-		overflow       : hidden;
-		text-decoration: none;
-		border         : none;
-		cursor         : pointer;
-		background     : transparent;
+		vertical-align : middle; // выравниваю вертикальную среднюю точку блока по базовой линии родительского блока плюс половина высоты буквы «x»
+		position       : relative; // устанавливаю тносительное позиционирование
+		overflow       : hidden; // отображаю только область внутри элемента, остальное будет скрыто
+		text-decoration: none; // убираю подчеркивание текста (для ссылок)
+		border         : none; // обнуляю границы
+		cursor         : pointer; // устанавливаю курсор
+		background     : transparent; // делаю фон элемента прозрачным
 
 		@include k19.flex();
 		@include k19.justify-content(center);
 		@include k19.align-items(center);
-		@include k19.border-radius(100px);
-		@include k19.wh(38px);
+		@include k19.border-radius(100px); // добавляю закругления элементу
+		@include k19.wh(38px); // ширина и высота элемента
 		@include k19.transition(
-			color $transition-duration,
-			background-color $transition-duration,
+			color $transition-duration, // время перехода для свойства `color`
+			background-color $transition-duration, // время перехода для свойства `background-color`
 		);
 
 		&:hover,
 		&:focus {
-			background: var(--colorTopBarActionHover)
+			background: var(--colorTopBarActionHover) // указываю цвет фона элемента при фокусе и наведении
 		}
 
 		&::before:hover {
@@ -88,33 +69,30 @@
 			content: '';
 
 			@include k19.wh(38px);
-			@include k19.position-absolute(0);
+			@include k19.position-absolute(0); // абсолютное позиционирование псевдоэлемента
 
 		}
 
 		&:active {
-
-			@include k19.props-apply((
-				background: colorTopBarActionActive,
-				color: colorTopBarActionIconActive,
-			));
-
+			color: var(--colorTopBarActionIconActive); // цвет текста элемента при нажатии
+			background-color: var(--colorTopBarActionActive); // цвет фона элемента при нажатии
 		}
 
-		&:first-child { margin-left : -9px; }
-		&:last-child  { margin-right: -7px; }
+		&:first-child { margin-left : -9px; } // вытягиваю первый элемент влево
+		&:last-child  { margin-right: -7px; } // вытягиваю последний элемент вправо
 
-		/// @name disabled
-		/// @access public
+		/// Стили для модификатора элемента TopBar Action (Disabled)
+		/// @name ActionDisabled
+		/// @group TopBar
 		/// @since 2.0.0
-		/// @author Haba Kudzaev (rx1310)
-		/// @link https://github.com/rx1310 GitHub
-		/// @require {mixin} m из пакета `@rx1310/kalium19`
-		/// @require {mixin} opacity из пакета `@rx1310/kalium19`
+		/// @access public
 		@include k19.m(disabled) {
-			@include k19.opacity(0.20);
-			pointer-events: none;
-			cursor: not-allowed;
+
+			pointer-events: none; // предотвращаю события мыши и щелчки по элементу
+			cursor: not-allowed; // устанавливаю курсор
+
+			@include k19.opacity(0.20); // добавляю прозрачности элементу
+
 		}
 
 	}

@@ -1,54 +1,40 @@
 @use '../../lib.kalium19' as k19;
 @use '../../vars' as *;
 
-/// @name header
-/// @access public
+/// Стили для элемента Header
+/// @name Header
 /// @since 2.0.0
-/// @author Haba Kudzaev (rx1310)
-/// @link https://github.com/rx1310 GitHub
-/// @require {mixin} b из пакета `@rx1310/kalium19`
-/// @require {mixin} e из пакета `@rx1310/kalium19`
+/// @access public
+/// @require {lib} kalium19
 @include k19.b(header) {
 
-	/// @name title
-	/// @access public
+	/// Стили для элемента Header Title
+	/// @name Title
+	/// @group Header
 	/// @since 2.0.0
-	/// @author Haba Kudzaev (rx1310)
-	/// @link https://github.com/rx1310 GitHub
-	/// @require {mixin} e из пакета `@rx1310/kalium19`
+	/// @access public
 	@include k19.e(title) {}
 
-	/// @name subtitle
-	/// @access public
+	/// Стили для элемента Header Subtitle
+	/// @name Subtitle
+	/// @group Header
 	/// @since 2.0.0
-	/// @author Haba Kudzaev (rx1310)
-	/// @link https://github.com/rx1310 GitHub
-	/// @require {mixin} e из пакета `@rx1310/kalium19`
-	/// @require {mixin} opacity из пакета `@rx1310/kalium19`
+	/// @access public
 	@include k19.e(subtitle) {
-
-		margin-top: 0;
-
-		@include k19.opacity(.8);
-
+		margin-top: 0; // убираю верхний отступ тега `p`
+		@include k19.opacity(.8); // устанавливаю прозрачность подзаголовка на значение `0.8`
 	}
 
-	/// @name icon
-	/// @access public
+	/// Стили для элемента Header Icon
+	/// @name Icon
+	/// @group Header
 	/// @since 2.0.0
-	/// @author Haba Kudzaev (rx1310)
-	/// @link https://github.com/rx1310 GitHub
-	/// @require {mixin} e из пакета `@rx1310/kalium19`
-	/// @require {mixin} wh из пакета `@rx1310/kalium19`
-	/// @require {mixin} border-radius из пакета `@rx1310/kalium19`
+	/// @access public
 	@include k19.e(icon) {
-
-		float: right;
-		margin: 0 0 1.1em 1.3em;
-
-		@include k19.wh(100px);
-		@include k19.border-radius();
-
+		float: right; // прижимаю иконку (тег `img`) вправо
+		margin: 0 0 1.1em 1.3em; // устанавливаю отступ слева и снизу, чтобы текст не налегал на `img`
+		@include k19.wh(100px); // ширина и высота элемента составляет 100px
+		@include k19.border-radius(); // устанавливаю закругление углов (значение по умолчанию в файле _lib.kalium19.scss)
 	}
 
 }
