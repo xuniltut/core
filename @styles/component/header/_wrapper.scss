@@ -7,9 +7,5 @@
 /// @access public
 /// @require {lib} kalium19
 @include k19.b(header-wrapper) {
-
-	color: var(--colorHeaderFont);
-	background-color: var(--colorHeaderBackground); // цвет фона элемента
-	border-bottom: 1px solid var(--colorDivider);
-
+	border-bottom: 1px solid var(--colorDivider); // устанавливаю бордер снизу
 }
