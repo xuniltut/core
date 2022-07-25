@@ -2,7 +2,9 @@
 
 $default: (
 
-	colorFont: black
+	colorFont: k19.$grey--900,
+	colorBackground: k19.$grey--50,
+
 );
 
 @include k19.props($default);

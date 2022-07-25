@@ -1,0 +1,8 @@
+# * title   : заголовок страницы
+# * subtitle: подзаголовок страницы (краткое описание)
+# * iconSrc : ссылка на иконку
+# * iconAlt : альт. описание иконки
+title   : "Header"
+subtitle: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quisquam deserunt labore sit magni similique rem accusantium enim velit fugiat quae corrupti blanditiis vero magnam, cupiditate, optio libero distinctio est."
+iconSrc : null
+iconAlt : null

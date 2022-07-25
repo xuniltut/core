@@ -1,0 +1,57 @@
+@use '../../lib.kalium19' as k19;
+@use '../../vars' as *;
+
+/// @name header
+/// @access public
+/// @since 2.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://github.com/rx1310 GitHub
+/// @require {mixin} b из пакета `@rx1310/kalium19`
+@include k19.b(header) {
+
+	/// @name title
+	/// @access public
+	/// @since 2.0.0
+	/// @author Haba Kudzaev (rx1310)
+	/// @link https://github.com/rx1310 GitHub
+	/// @require {mixin} e из пакета `@rx1310/kalium19`
+	@include k19.e(title) {}
+
+	/// @name subtitle
+	/// @access public
+	/// @since 2.0.0
+	/// @author Haba Kudzaev (rx1310)
+	/// @link https://github.com/rx1310 GitHub
+	/// @require {mixin} e из пакета `@rx1310/kalium19`
+	@include k19.e(subtitle) {
+
+		margin-top: 0;
+
+		/// @require {mixin} opacity из пакета `@rx1310/kalium19`
+		/// @arg {int} opacity [.8]
+		@include k19.opacity(.8);
+
+	}
+
+	/// @name icon
+	/// @access public
+	/// @since 2.0.0
+	/// @author Haba Kudzaev (rx1310)
+	/// @link https://github.com/rx1310 GitHub
+	/// @require {mixin} e из пакета `@rx1310/kalium19`
+	@include k19.e(icon) {
+
+		float: right;
+		margin: 0 0 1.1em 1.3em;
+
+		/// @require {mixin} wh из пакета `@rx1310/kalium19`
+		/// @arg {string | int} width [100px]
+		@include k19.wh(100px);
+
+		/// @require {mixin} border-radius из пакета `@rx1310/kalium19`
+		/// @arg {string | int} radius [100%]
+		@include k19.border-radius(100%);
+
+	}
+
+}

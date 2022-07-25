@@ -1,0 +1,18 @@
+<header class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div>
+
+					{% if header.iconSrc %}
+					 <img src="{{ header.iconSrc }}" alt="{{ header.iconAlt }}" title="{{ header.iconAlt }}" class="header__icon" loading="lazy">
+					{% endif %}
+
+					<h1 class="header__title">{{ header.title }}</h1>
+					<p class="header__subtitle">{{ header.subtitle }}</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
