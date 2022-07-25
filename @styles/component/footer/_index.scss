@@ -1,0 +1,61 @@
+@use '../../lib.kalium19' as k19;
+@use '../../vars' as *;
+@use 'wrapper' as *;
+
+/// Стили для элемента Footer
+/// @name Footer
+/// @since 2.0.0
+/// @access public
+/// @require {lib} kalium19
+@include k19.b(footer) {
+
+	/// Стили для элемента Footer Link
+	/// @name FooterLink
+	/// @group Footer
+	/// @since 2.0.0
+	/// @access public
+	/// @require {lib} kalium19
+	@include k19.e(link) {
+
+		color: inherit; // наследуем цвет шрифта от родителя
+		text-decoration: none; // убираю декорации для ссылок (подчеркивания)
+
+		&:not(:last-child) { margin-right: .5em; } // добавляем последнему элементу в родителе отступ справа
+
+		/// Стили для элемента Footer Link icon
+		/// @name FooterLinkIcon
+		/// @group Footer
+		/// @since 2.0.0
+		/// @access public
+		/// @require {lib} kalium19
+		@include k19.e(icon) {
+
+			@include k19.wh(35px); // высота и ширина иконки
+			@include k19.border-radius(100%); // обнуляю закругления
+			@include k19.transition(
+				transform $transition-duration, // время перехода для свойства `transform`
+				padding $transition-duration, // время перехода для свойства `padding`
+				border-radius $transition-duration // время перехода для свойства `border-radius`
+			);
+
+			&:hover,
+			&:focus,
+			&:focus-visible {
+
+				--iconColor: var(--colorFooterBackground);
+
+				background-color: white; // цвет фона иконки при фокусе или наведении мыши
+				padding: 2px; // отступ внутри иконки при фокусе или наведении мыши
+
+				@include k19.transform(scale(1.150)); // "вдавливаем" иконку при фокусе или наведении мыши
+
+			}
+
+			&:active {
+				@include k19.transform(scale(1)); // "вдавливаем" иконку еще больше при нажатии
+			}
+
+		}
+
+	}
+}

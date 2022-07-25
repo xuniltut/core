@@ -1,0 +1,16 @@
+# * url       : ссылка на ресурс
+# * title     : название ресурса, которое также добавляется в аттрибут title
+# * iconColor : цвет иконки
+social:
+  github:
+    url: "https://github.com/xuniltut"
+    title: "GitHub"
+    iconColor: "#ffffff"
+  telegram:
+    url: "https://t.me/tutlinux"
+    title: "Telegram"
+    iconColor: "#26A5E4"
+  vk:
+    url: "https://vk.com/tutlinux"
+    title: "VK"
+    iconColor: "#0077FF"

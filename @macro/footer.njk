@@ -1,0 +1,12 @@
+{% macro link(title, url, iconName, iconColor) %}
+	<a
+		{% if iconColor != null %} style="--iconColor: {{ iconColor }}" {% endif %}
+		class="footer__link"
+		title="Нажмите, чтобы перейти в {{ title }} →"
+		aria-label="Перейти в {{ title }}"
+		href="{{ url }}">
+		<svg class="footer__link__icon">
+			<use xlink:href="/assets/images/icons.svg#{{ iconName }}"></use>
+		</svg>
+	</a>
+{% endmacro %}
