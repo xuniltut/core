@@ -50,3 +50,15 @@ $font-size_h5: $font-size * 1.25;
 /// @access public
 /// @require {variable} $font-size
 $font-size_h6: $font-size;
+
+/// Продолжительность перехода `transition`
+/// @type Int
+/// @access public
+$transition-duration: .3s;
+
+/// Значение `z-index` для элементов
+/// @access public
+/// @prop {int} $z-indexes.topbar [1] - значение для элемента TopBar
+$z-indexes: (
+	topbar: 1
+);

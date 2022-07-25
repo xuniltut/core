@@ -1,0 +1,7 @@
+# * {string} title: заголовок панели
+title: dw
+
+# * {boolean} actionBack     : отображение кнопки "Назад"
+# * {boolean} actionScrollUp : отображение кнопки "К началу страницы"
+actionBack    : true
+actionScrollUp: true

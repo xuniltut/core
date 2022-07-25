@@ -1,0 +1,29 @@
+{% import '../@macro/topbar.njk' as topbar %}
+
+<nav class="topbar-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="topbar">
+
+					{% if topbar.actionBack != false %}
+						{{ topbar.action(null, "Назад", "Переход на шаг назад", "arrow_back", "window.history.back()", false) }}
+					{% endif %}
+
+					<h5 class="topbar__title hidden">
+						{% if topbar.title != null %}
+							{{ topbar.title }}
+						{% else %}
+							{{ head.title }}
+						{% endif %}
+					</h5>
+
+					{% if topbar.actionScrollUp != false %}
+						{{ topbar.action("scrollUp", "К началу", "Переход к началу страницы", "keyboard_double_arrow_up", "scrollUp()", true) }}
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

@@ -1,8 +1,8 @@
-# * title   : заголовок страницы
-# * subtitle: подзаголовок страницы (краткое описание)
-# * iconSrc : ссылка на иконку
-# * iconAlt : альт. описание иконки
-title   : "Header"
-subtitle: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quisquam deserunt labore sit magni similique rem accusantium enim velit fugiat quae corrupti blanditiis vero magnam, cupiditate, optio libero distinctio est."
-iconSrc : null
-iconAlt : null
+# * {string} title   : заголовок страницы
+# * {string} subtitle: подзаголовок страницы (краткое описание)
+# * {string} iconSrc : ссылка на иконку
+# * {string} iconAlt : альт. описание иконки
+title   : "TutLinux"
+subtitle: "Открытый проект (интернет-ресурс), разработанный для предоставления минимальной информации о программном обеспечении, используемом в дистрибутивах Linux."
+iconSrc : "https://avatars.githubusercontent.com/u/108356980?s=200&v=4"
+iconAlt : "Логотип проекта TutLinux"

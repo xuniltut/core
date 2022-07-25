@@ -1,0 +1,10 @@
+{% macro action(id, title, aria_label, icon, onclick, isActionDisabled) %}
+	<button
+		id="{{ id }}"
+		class="topbar__action {{ "topbar__action--disabled" if isActionDisabled }} material-icons"
+		title="{{ title }}"
+		aria-label="{{ aria_label }}"
+		onclick="{{ onclick }}">
+		{{ icon }}
+	</button>
+{% endmacro %}

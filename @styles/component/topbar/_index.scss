@@ -1,0 +1,122 @@
+@use '../../lib.kalium19' as k19;
+@use '../../vars' as *;
+@use 'wrapper' as *;
+
+/// @name topbar
+/// @access public
+/// @since 2.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://github.com/rx1310 GitHub
+/// @require {mixin} b из пакета `@rx1310/kalium19`
+/// @require {mixin} e из пакета `@rx1310/kalium19`
+/// @require {mixin} m из пакета `@rx1310/kalium19`
+/// @require {mixin} flex из пакета `@rx1310/kalium19`
+/// @require {mixin} justify-content из пакета `@rx1310/kalium19`
+/// @require {mixin} align-items из пакета `@rx1310/kalium19`
+@include k19.b(topbar) {
+
+	padding: .5em 0;
+
+	@include k19.flex();
+	@include k19.justify-content(space-between);
+	@include k19.align-items(center);
+
+	/// @name title
+	/// @access public
+	/// @since 2.0.0
+	/// @author Haba Kudzaev (rx1310)
+	/// @link https://github.com/rx1310 GitHub
+	/// @require {mixin} e из пакета `@rx1310/kalium19`
+	/// @require {mixin} transition из пакета `@rx1310/kalium19`
+	@include k19.e(title) {
+
+		margin        : 0;
+		font-size     : $font-size_h6;
+		color         : inherit;
+		text-transform: lowercase;
+
+		&.hidden { color: transparent; }
+
+		@include k19.transition(color $transition-duration);
+
+	}
+
+	/// @name action
+	/// @access public
+	/// @since 2.0.0
+	/// @author Haba Kudzaev (rx1310)
+	/// @link https://github.com/rx1310 GitHub
+	/// @require {mixin} e из пакета `@rx1310/kalium19`
+	/// @require {mixin} m из пакета `@rx1310/kalium19`
+	/// @require {mixin} props-apply из пакета `@rx1310/kalium19`
+	/// @require {mixin} flex из пакета `@rx1310/kalium19`
+	/// @require {mixin} justify-content из пакета `@rx1310/kalium19`
+	/// @require {mixin} align-items из пакета `@rx1310/kalium19`
+	/// @require {mixin} border-radius из пакета `@rx1310/kalium19`
+	/// @require {mixin} wh из пакета `@rx1310/kalium19`
+	/// @require {mixin} transition из пакета `@rx1310/kalium19`
+	/// @require {mixin} wh из пакета `@rx1310/kalium19`
+	/// @require {mixin} position-absolute из пакета `@rx1310/kalium19`
+	@include k19.e(action) {
+
+		vertical-align : middle;
+		position       : relative;
+		overflow       : hidden;
+		text-decoration: none;
+		border         : none;
+		cursor         : pointer;
+		background     : transparent;
+
+		@include k19.flex();
+		@include k19.justify-content(center);
+		@include k19.align-items(center);
+		@include k19.border-radius(100px);
+		@include k19.wh(38px);
+		@include k19.transition(
+			color $transition-duration,
+			background-color $transition-duration,
+		);
+
+		&:hover,
+		&:focus {
+			background: var(--colorTopBarActionHover)
+		}
+
+		&::before:hover {
+
+			display: block;
+			content: '';
+
+			@include k19.wh(38px);
+			@include k19.position-absolute(0);
+
+		}
+
+		&:active {
+
+			@include k19.props-apply((
+				background: colorTopBarActionActive,
+				color: colorTopBarActionIconActive,
+			));
+
+		}
+
+		&:first-child { margin-left : -9px; }
+		&:last-child  { margin-right: -7px; }
+
+		/// @name disabled
+		/// @access public
+		/// @since 2.0.0
+		/// @author Haba Kudzaev (rx1310)
+		/// @link https://github.com/rx1310 GitHub
+		/// @require {mixin} m из пакета `@rx1310/kalium19`
+		/// @require {mixin} opacity из пакета `@rx1310/kalium19`
+		@include k19.m(disabled) {
+			@include k19.opacity(0.20);
+			pointer-events: none;
+			cursor: not-allowed;
+		}
+
+	}
+
+}

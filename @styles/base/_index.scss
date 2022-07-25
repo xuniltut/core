@@ -3,6 +3,7 @@
 @forward 'body';
 @forward 'h';
 @forward 'img' hide $maxSize;
+@forward 'typography';
 
 *,
 *::before,

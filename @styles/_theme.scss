@@ -5,6 +5,12 @@ $default: (
 	colorFont: k19.$grey--900,
 	colorBackground: k19.$grey--50,
 
+	colorTopBarBackground: k19.$grey--A100,
+	colorTopBarAction: k19.$grey--900,
+	colorTopBarActionHover: k19.$grey--400,
+	colorTopBarActionActive: k19.$grey--900,
+	colorTopBarActionIconActive: k19.$grey--A100,
+
 );
 
 @include k19.props($default);
