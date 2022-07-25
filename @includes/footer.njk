@@ -1,0 +1,32 @@
+{% import "../@macro/footer.njk" as footer_macro %}
+
+<footer class="footer-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="footer">
+
+					<br>
+					<figure>
+						<img
+							class="img--rounded"
+							src="https://avatars.githubusercontent.com/u/108356980?s=200&v=4"
+							alt="Логотип проекта"
+							width="90px">
+					</figure>
+
+					<p><b>TutLinux</b> <span disabled>(TL, ТЛ)</span> — это открытый веб-проект (интернет-ресурс), предоставляющий основную информацию о работе с программным обеспечением в среде систем основанных на ядре Linux.</p>
+
+					{% for id, data in footer.social %}
+						{{ footer_macro.link(data.title, data.url, id, data.iconColor) }}
+					{% endfor %}
+
+					<p>Проект разрабатывается при поддержке энтузиазма и совершенно открыто и свободно распространяется по лицензии <a href="https://github.com/xuniltut/core/blob/main/LICENSE">MIT</a> в сети Интернет.<br>Сделано Асхабом Кудзаевым с 🫀 к комьюнити.</p>
+					<p disabled>&copy; 2022, Haba Kudzaev (rx1310)</p>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</footer>
