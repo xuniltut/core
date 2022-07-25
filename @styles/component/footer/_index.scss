@@ -31,21 +31,21 @@
 		@include k19.e(icon) {
 
 			@include k19.wh(35px); // высота и ширина иконки
-			@include k19.border-radius(100%); // обнуляю закругления
+			// @include k19.border-radius(100%); // обнуляю закругления
 			@include k19.transition(
 				transform $transition-duration, // время перехода для свойства `transform`
-				padding $transition-duration, // время перехода для свойства `padding`
-				border-radius $transition-duration // время перехода для свойства `border-radius`
+				// padding $transition-duration, // время перехода для свойства `padding`
+				// border-radius $transition-duration // время перехода для свойства `border-radius`
 			);
 
 			&:hover,
 			&:focus,
 			&:focus-visible {
 
-				--iconColor: var(--colorFooterBackground);
+				// --iconColor: var(--colorFooterBackground);
 
-				background-color: white; // цвет фона иконки при фокусе или наведении мыши
-				padding: 2px; // отступ внутри иконки при фокусе или наведении мыши
+				// background-color: white; // цвет фона иконки при фокусе или наведении мыши
+				// padding: 2px; // отступ внутри иконки при фокусе или наведении мыши
 
 				@include k19.transform(scale(1.150)); // "вдавливаем" иконку при фокусе или наведении мыши
 
