@@ -13,7 +13,7 @@ description   : "Проект с открытым исходным кодом, �
 author        : "Haba Kudzaev (rx1310)"
 app_name      : "TutLinux"
 robots        : "index,follow" # `null`, если не хотите использовать
-theme_color   : "#ffffff"
+theme_color   : "#fff"
 color_scheme  : "dark light"
 
 # ? Аналитика

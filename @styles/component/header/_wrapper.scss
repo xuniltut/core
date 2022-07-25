@@ -1,0 +1,15 @@
+@use '../../lib.kalium19' as k19;
+
+/// Стили для элемента Header Wrapper
+/// @name HeaderWrapper
+/// @group Header
+/// @since 2.0.0
+/// @access public
+/// @require {lib} kalium19
+@include k19.b(header-wrapper) {
+
+	color: var(--colorHeaderFont);
+	background-color: var(--colorHeaderBackground); // цвет фона элемента
+	border-bottom: 1px solid var(--colorDivider);
+
+}
