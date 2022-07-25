@@ -1,0 +1,26 @@
+@use '../lib.kalium19' as k19;
+
+html {
+	background-color: unselect;
+	@include k19.opacity(1);
+}
+
+body {
+
+	font-family: 'Fira Sans', sans-serif;
+	margin: 0;
+	background-color: var(--colorBackground);
+	color: var(--colorFont);
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	@include k19.scroll-behavior(smooth);
+	@include k19.unselect;
+	@include k19.prefixer(
+		text-size-adjust,
+		100%,
+		webkit moz ms
+	);
+
+}

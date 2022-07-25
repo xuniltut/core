@@ -1,0 +1,8 @@
+@use 'lib.kalium19' as k19;
+
+$default: (
+
+	colorFont: black
+);
+
+@include k19.props($default);
