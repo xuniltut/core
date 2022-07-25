@@ -1,19 +1,52 @@
-// ? Переменные для заголовков
-// * [1] - стандартный размер шрифта
-// * [2] - большой размер шрифта
-// * [3] - маленький размер шрифта
-// * [4] - размер шрифта для заголовока H1
-// * [5] - размер шрифта для заголовока H2
-// * [6] - размер шрифта для заголовока H3
-// * [7] - размер шрифта для заголовока H5
-// * [8] - размер шрифта для заголовока H5
-// * [9] - размер шрифта для заголовока H6
-$font-size   : 1rem;              // 1
-$font-size_lg: $font-size * 1.25; // 2
-$font-size_sm: $font-size * .875; // 3
-$font-size_h1: $font-size * 2.5;  // 4
-$font-size_h2: $font-size * 2;    // 5
-$font-size_h3: $font-size * 1.75; // 6
-$font-size_h4: $font-size * 1.5;  // 7
-$font-size_h5: $font-size * 1.25; // 8
-$font-size_h6: $font-size;        // 9
+/// Стандартный размер шрифта
+/// @type String | Int
+/// @access public
+$font-size: 1rem;
+
+/// Большой размер шрифта
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_lg: $font-size * 1.25;
+
+/// Маленький размер шрифта
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_sm: $font-size * .875;
+
+/// Размер шрифта для заголовока `h1`
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_h1: $font-size * 2.5;
+
+/// Размер шрифта для заголовока `h2`
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_h2: $font-size * 2;
+
+/// Размер шрифта для заголовока `h3`
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_h3: $font-size * 1.75;
+
+/// Размер шрифта для заголовока `h4`
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_h4: $font-size * 1.5;
+
+/// Размер шрифта для заголовока `h5`
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_h5: $font-size * 1.25;
+
+/// Размер шрифта для заголовока `h6`
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_h6: $font-size;

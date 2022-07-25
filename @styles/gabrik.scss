@@ -2,7 +2,7 @@
 @use 'sass:map';
 @use 'sass:string';
 
-@use 'variables' as *;
-@use 'theme' as *;
-@use 'base' as *;
-@use 'header' as *;
+@use 'vars' as *;
+@use './lib.kalium19' as *;
+
+@include check
