@@ -1,0 +1,112 @@
+@use '../../lib.kalium19' as k19;
+@use '../../vars' as *;
+
+/// Стили для элемента Card
+/// @name Card
+/// @since 2.0.0
+/// @access public
+/// @require {lib} kalium19
+@include k19.b(card) {
+
+	background-color: var(--colorCardBackground); // цвет карточки
+	border: 1px solid var(--colorDivider); // добавляю бордюр карточке
+	padding         : 1em; // добавляю внутренние отступы
+	position        : relative; // относительно позиционирую
+	margin-bottom   : 1em; // добавляю внешний нижний отступ
+
+	@include k19.border-radius(); // ну и скругления углов карточки
+
+	/// Стили для элемента Card Title
+	/// @name CardTitle
+	/// @group Card
+	/// @since 2.0.0
+	/// @access public
+	/// @require {lib} kalium19
+	@include k19.e(title) {
+		margin-top: 0 !important; // убираю отступ заголовка сверху
+		font-size : $font-size_h5; // устанавливаю размер шрифта заголовка карточки
+	}
+
+	/// Стили для элемента Card Subtitle
+	/// @name CardSubtitle
+	/// @group Card
+	/// @since 2.0.0
+	/// @access public
+	/// @require {lib} kalium19
+	@include k19.e(subtitle) {
+
+		&:first-child { margin-top:    0; }
+		&:last-child  { margin-bottom: 0; }
+
+		/// Стили для модификатора элемента Card Subtitle (shorten)
+		/// @name CardTitleShorten
+		/// @group Card
+		/// @since 2.0.0
+		/// @access public
+		/// @require {lib} kalium19
+		@include k19.m(shorten) {
+			@include k19.text-shorten(3); // ограничиваю допустимое количество строк
+		}
+
+	}
+
+	/// Стили для элемента Card Icon
+	/// @name CardIcon
+	/// @group Card
+	/// @since 2.0.0
+	/// @access public
+	/// @require {lib} kalium19
+	@include k19.e(icon) {
+
+		float : right; // прижимаю иконку к правой части родителя
+		margin: 0 0 1em 1em; // добавляю отступы
+
+		@include k19.wh(80px); // устанавливаю высоту и ширину иконки
+
+	}
+
+	/// Стили для элемента Card Link
+	/// @name CardLink
+	/// @group Card
+	/// @since 2.0.0
+	/// @access public
+	/// @require {lib} kalium19
+	@include k19.e(link) {
+		&::before {
+			content : '';
+			@include k19.wh(100%); // высота и ширина
+			@include k19.position-absolute(0, null, null, 0); // абсолютное позиционирование (top, left)
+		}
+	}
+
+	/// Стили для модификатора элемента Card (clickable)
+	/// @name CardClickable
+	/// @group Card
+	/// @since 2.0.0
+	/// @access public
+	/// @require {lib} kalium19
+	@include k19.m(clickable) {
+
+		cursor: pointer; // курсор "нажмите"
+
+		@include k19.transition(
+			transform $transition-duration, //
+			color $transition-duration,     // тут в принципе понятно все
+			background $transition-duration // время переходов для свойств
+		);
+
+		&:hover,
+		&:focus,
+		&:focus-visible {
+			background-color: var(--colorCardClickableBackgroundHover); // цвет фона при фокусе или наведении на карточку
+		}
+
+		&:active {
+			color: white; //
+			background-color: var(--colorCardClickableBackgroundActive); // цвет
+			@include k19.transform(scale(1.005)); // вдавливаем элемент при нажатии
+		}
+
+	}
+
+}

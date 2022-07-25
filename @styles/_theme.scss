@@ -19,6 +19,10 @@ $default: (
 	colorFooterFont: k19.$grey--50,
 	colorFooterBackground: k19.$grey--900,
 
+	colorCardBackground: k19.$grey--50,
+	colorCardClickableBackgroundHover: k19.$grey--400,
+	colorCardClickableBackgroundActive: k19.$grey--900,
+
 );
 
 @include k19.props($default);
