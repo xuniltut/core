@@ -24,7 +24,7 @@
 	/// @require {lib} kalium19
 	@include k19.e(title) {
 		margin-top: 0 !important; // убираю отступ заголовка сверху
-		font-size : $font-size_h5; // устанавливаю размер шрифта заголовка карточки
+		// font-size : $font-size_h5; // устанавливаю размер шрифта заголовка карточки
 	}
 
 	/// Стили для элемента Card Subtitle
