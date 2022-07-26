@@ -1,0 +1,31 @@
+{% import '../@macro/navbar.njk' as navbar_macro %}
+
+<nav class="navbar-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="navbar">
+
+					{% if navbar.actionSearch == false %}
+						{{ navbar_macro.action(null, "Назад", "Переход на шаг назад", "arrow_back", "window.history.back()", false) }}
+					{% else %}
+						{{ navbar_macro.action(null, "Поиск", "Переход к поиску", "search", "window.history.back()", false) }}
+					{% endif %}
+
+					<h5 class="navbar__title hidden">
+						{% if navbar.title != 'default' %}
+							{{ navbar.title }}
+						{% else %}
+							{{ head.title }}
+						{% endif %}
+					</h5>
+
+					{% if navbar.actionScrollUp %}
+						{{ navbar_macro.action("scrollUp", "К началу", "Переход к началу страницы", "keyboard_double_arrow_up", "scrollUp()", true) }}
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

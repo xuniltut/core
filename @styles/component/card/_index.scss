@@ -9,7 +9,6 @@
 @include k19.b(card) {
 
 	background-color: var(--colorCardBackground); // цвет карточки
-	// border: 1px solid var(--colorDivider); // добавляю бордюр карточке
 	padding         : 1em; // добавляю внутренние отступы
 	position        : relative; // относительно позиционирую
 	// margin-bottom   : 1em; // добавляю внешний нижний отступ

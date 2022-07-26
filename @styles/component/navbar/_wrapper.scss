@@ -2,15 +2,15 @@
 @use '../../utils/mixins' as *;
 @use '../../vars' as *;
 
-/// Стили для элемента TopBar Wrapper
-/// @name TopBarWrapper
-/// @group TopBar
+/// Стили для элемента navbar Wrapper
+/// @name navbarWrapper
+/// @group navbar
 /// @since 2.0.0
 /// @access public
 /// @require {lib} kalium19
-@include k19.b(topbar-wrapper) {
+@include k19.b(navbar-wrapper) {
 
-	z-index: k19.map-deep-get($z-indexes, topbar); // устанавливаю `z-index`
+	z-index: k19.map-deep-get($z-indexes, navbar); // устанавливаю `z-index`
 	background-color: var(--colorBackground); // цвет фона элемента
 
 	@include position-sticky(); // добавляю липкое позиционирование
@@ -22,16 +22,16 @@
 		background-color $transition-duration, // время перехода для свойства `background-color`
 	);
 
-	/// Стили для модификатора элемента TopBar Wrapper (Scrolled)
-	/// @name TopBarWrapperScrolled
-	/// @group TopBar
+	/// Стили для модификатора элемента navbar Wrapper (Scrolled)
+	/// @name navbarWrapperScrolled
+	/// @group navbar
 	/// @since 2.0.0
 	/// @access public
 	/// @require {lib} kalium19
 	@include k19.m(scrolled) {
 
-		background-color: var(--colorTopBarBackground); // цвет фона элемента при скролле
-		box-shadow: var(--shadowTopBar); // добавляю тень элементу
+		background-color: var(--colornavbarBackground); // цвет фона элемента при скролле
+		box-shadow: var(--shadownavbar); // добавляю тень элементу
 
 		@include k19.opacity(1); // убираю прозрачность
 

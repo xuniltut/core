@@ -1,20 +1,20 @@
-const topbar               = document.querySelector('.topbar-wrapper');
-const topbarScrolled  = "topbar-wrapper--scrolled";
-const topbarTitle = document.querySelector('.topbar__title');
-const topBarScrollUp = document.getElementById('scrollUp');
-const topBarScrollUpDisabled = "topbar__action--disabled";
+const navbar               = document.querySelector('.navbar-wrapper');
+const navbarScrolled  = "navbar-wrapper--scrolled";
+const navbarTitle = document.querySelector('.navbar__title');
+const navbarScrollUp = document.getElementById('scrollUp');
+const navbarScrollUpDisabled = "navbar__action--disabled";
 
 window.addEventListener('scroll', (e) => {
 
 	try {
 		if (window.pageYOffset > 150) {
-			topbar.classList.add(topbarScrolled);
-			topbarTitle.classList.remove('hidden');
-			topBarScrollUp.classList.remove(topBarScrollUpDisabled);
+			navbar.classList.add(navbarScrolled);
+			navbarTitle.classList.remove('hidden');
+			navbarScrollUp.classList.remove(navbarScrollUpDisabled);
 		} else {
-			topbar.classList.remove(topbarScrolled);
-			topbarTitle.classList.add('hidden');
-			topBarScrollUp.classList.add(topBarScrollUpDisabled);
+			navbar.classList.remove(navbarScrolled);
+			navbarTitle.classList.add('hidden');
+			navbarScrollUp.classList.add(navbarScrollUpDisabled);
 
 		}
 	} catch (error) {

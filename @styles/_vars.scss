@@ -58,7 +58,7 @@ $transition-duration: .3s;
 
 /// Значение `z-index` для элементов
 /// @access public
-/// @prop {int} $z-indexes.topbar [1] - значение для элемента TopBar
+/// @prop {int} $z-indexes.navbar [1] - значение для элемента navbar
 $z-indexes: (
-	topbar: 1
+	navbar: 1
 );
