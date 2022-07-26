@@ -1,6 +1,6 @@
 {
   "name": "@xuniltut/core",
-	"version": "2.0.0",
+  "version": "2.0.0",
   "description": "основной репозиторий проекта TutLinux, который содержит в себе все стили, конфигурации, шаблоны... короче говоря, всё кроме контента.",
   "private": true,
   "scripts": {
@@ -33,7 +33,7 @@
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@rx1310/grid-v4": "^4.4.2",
-    "@rx1310/kalium19": "^4.1.1",
+    "@rx1310/kalium19": "^4.1.2",
     "cross-env": "^7.0.3",
     "js-yaml": "^4.1.0",
     "markdown-it": "^13.0.1",

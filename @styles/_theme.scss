@@ -16,12 +16,16 @@ $default: (
 
 	colorMainBackground: k19.$grey--100,
 
-	colorFooterFont: k19.$grey--50,
-	colorFooterBackground: k19.$grey--900,
+	colorFooterFont: inherit,
+	colorFooterBackground: var(--colorBackground),
 
 	colorCardBackground: k19.$grey--50,
 	colorCardClickableBackgroundHover: k19.$grey--400,
 	colorCardClickableBackgroundActive: k19.$grey--900,
+	shadowCard: (
+		rgba(0, 0, 0, 0.12) 0px 1px 3px,
+		rgba(0, 0, 0, 0.24) 0px 1px 2px
+	),
 
 );
 

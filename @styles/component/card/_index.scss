@@ -9,11 +9,12 @@
 @include k19.b(card) {
 
 	background-color: var(--colorCardBackground); // цвет карточки
-	border: 1px solid var(--colorDivider); // добавляю бордюр карточке
+	// border: 1px solid var(--colorDivider); // добавляю бордюр карточке
 	padding         : 1em; // добавляю внутренние отступы
 	position        : relative; // относительно позиционирую
-	margin-bottom   : 1em; // добавляю внешний нижний отступ
+	// margin-bottom   : 1em; // добавляю внешний нижний отступ
 
+	@include k19.box-shadow(var(--shadowCard));
 	@include k19.border-radius(); // ну и скругления углов карточки
 
 	/// Стили для элемента Card Title
@@ -105,6 +106,70 @@
 			color: white; //
 			background-color: var(--colorCardClickableBackgroundActive); // цвет
 			@include k19.transform(scale(1.005)); // вдавливаем элемент при нажатии
+		}
+
+	}
+
+	/// Стили для элемента Card List
+	/// @name CardList
+	/// @group Card
+	/// @since 2.0.0
+	/// @access public
+	/// @require {lib} kalium19
+	@include k19.e(list) {
+
+		list-style: none;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+		margin: -1em;
+
+		li {
+
+			padding: 1em;
+    	cursor: pointer;
+			font-weight: bold;
+
+			@include k19.position-relative();
+
+			@include k19.transition(
+				border-color $transition-duration, //
+				color $transition-duration,     // тут в принципе понятно все
+				background $transition-duration // время переходов для свойств
+			);
+
+			&:hover { background-color: var(--colorCardClickableBackgroundHover); }
+			&:active {
+				background-color: var(--colorCardClickableBackgroundActive);
+				border-color: var(--colorCardClickableBackgroundActive);
+				color: white;
+			}
+
+			&:not(:last-child) {
+				border-bottom: 1px solid var(--colorDivider);
+			}
+
+			&:first-child {
+				@include k19.border-top-radius();
+			}
+
+			&:last-child {
+				@include k19.border-bottom-radius();
+			}
+
+
+			a {
+
+				text-decoration: none;
+				color: inherit;
+
+				&::before {
+					content: '';
+					@include k19.position-absolute(0, null, null, 0);
+					@include k19.wh(100%);
+				}
+
+			}
+
 		}
 
 	}

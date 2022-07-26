@@ -9,52 +9,41 @@
 		{% include 'header.njk' %}
 
 		<main>
-			<div class="container ">
+			<div class="container">
 				<div class="row">
-					<div class="col-12">
+					<div class="col-12 col-md-8">
 						<h2>Утилиты</h2>
 						<p>Основная информация о самых востребованных консольных (CLI) и графических (GUI) утилитах среди Linux-пользователей.</p>
 					</div>
-
-					<div class="col-12">
-						<h2>Distrowiki</h2>
-						<p>Раздел посвященный самым востребованным операционным системам (дистрибутивам) на базе ядра Linux среди пользователей (home) и компаний (enterprise).</p>
-						<div class="horizontal-box">
-							<div class="card card--clickable horizontal-box__item">
-								<figure>
-									<img
-										class="card__icon"
-										loading="lazy"
-										src="https://upload.wikimedia.org/wikipedia/commons/4/41/Fedora_icon_%282021%29.svg">
-								</figure>
-								<h4 class="card__title">Fedora Linux</h4>
-								<p class="card__subtitle card__subtitle--shorten">Дистрибутив Linux, разрабатываемый Проектом Fedora, спонсируемый компаниями Red Hat и IBM и содержащий возможности, которые в будущем предполагаются к использованию в дистрибутиве Red Hat Enterprise Linux.</p>
-							</div>
-							<div class="card card--clickable horizontal-box__item">
-								<figure>
-									<img
-										class="card__icon"
-										loading="lazy"
-										src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo-ubuntu_cof-orange-hex.svg">
-								</figure>
-								<h4 class="card__title">Ubuntu</h4>
-								<p class="card__subtitle card__subtitle--shorten">Дистрибутив GNU/Linux, основанный на Debian GNU/Linux. Основным разработчиком и спонсором является компания Canonical. В настоящее время проект активно развивается и поддерживается свободным сообществом.</p>
-							</div>
-							<div class="card card--clickable horizontal-box__item">
-								<figure>
-									<img
-										class="card__icon"
-										loading="lazy"
-										src="https://upload.wikimedia.org/wikipedia/commons/6/66/Openlogo-debianV2.svg">
-								</figure>
-								<h4 class="card__title">Debian</h4>
-								<p class="card__subtitle card__subtitle--shorten">Один из самых популярных и важных дистрибутивов GNU/Linux, в первичной форме оказавший значительное влияние на развитие этого типа ОС в целом.</p>
-							</div>
-						</div>
+					<div class="col-12 col-md-4">
 						<br>
+						<div class="card">
+							<ul class="card__list">
+								<li><a href="https://1">curl</a></li>
+								<li><a href="https://1">git</a></li>
+								<li><a href="https://1">sudo</a></li>
+								<li><a class="mi" href="#">Весь список &nbsp;<span class="material-icons">arrow_forward</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-12 col-md-8">
+						<h2>Distrowiki</h2>
+						<p>Основная информация о самых востребованных дистрибутивах на базе ядра Linux.</p>
+					</div>
+					<div class="col-12 col-md-4">
+						<br>
+						<div class="card">
+							<ul class="card__list">
+								<li><a href="#">Fedora Linux</a></li>
+								<li><a href="#">Ubuntu</a></li>
+								<li><a href="#">openSUSE</a></li>
+								<li><a class="mi" href="#">Весь список &nbsp;<span class="material-icons">arrow_forward</span></a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
+			<br>
 		</main>
 
 		{% include 'footer.njk'%}
