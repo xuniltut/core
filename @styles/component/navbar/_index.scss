@@ -2,7 +2,7 @@
 @use '../../vars' as *;
 @use 'wrapper' as *;
 
-/// Стили для элемента navbar
+/// Стили для элемента NavBar
 /// @name navbar
 /// @since 2.0.0
 /// @access public
@@ -15,7 +15,7 @@
 	@include k19.justify-content(space-between); // флексы равномерно распределяются по всей строке (первый и последний элемент прижимаются к соответствующим краям контейнера)
 	@include k19.align-items(center); // флексы выравниваются по линии поперечной оси.
 
-	/// Стили для элемента navbar Title
+	/// Стили для элемента NavBar Title
 	/// @name Title
 	/// @group navbar
 	/// @since 2.0.0
@@ -33,7 +33,7 @@
 
 	}
 
-	/// Стили для элемента navbar Action
+	/// Стили для элемента NavBar Action
 	/// @name Action
 	/// @group navbar
 	/// @since 2.0.0
@@ -60,7 +60,7 @@
 
 		&:hover,
 		&:focus {
-			background: var(--colornavbarActionHover) // указываю цвет фона элемента при фокусе и наведении
+			background: var(--colorNavBarActionHover) // указываю цвет фона элемента при фокусе и наведении
 		}
 
 		&::before:hover {
@@ -74,14 +74,14 @@
 		}
 
 		&:active {
-			color: var(--colornavbarActionIconActive); // цвет текста элемента при нажатии
-			background-color: var(--colornavbarActionActive); // цвет фона элемента при нажатии
+			color: var(--colorNavBarActionIconActive); // цвет текста элемента при нажатии
+			background-color: var(--colorNavBarActionActive); // цвет фона элемента при нажатии
 		}
 
 		&:first-child { margin-left : -9px; } // вытягиваю первый элемент влево
 		&:last-child  { margin-right: -5px; } // вытягиваю последний элемент вправо
 
-		/// Стили для модификатора элемента navbar Action (Disabled)
+		/// Стили для модификатора элемента NavBar Action (Disabled)
 		/// @name ActionDisabled
 		/// @group navbar
 		/// @since 2.0.0

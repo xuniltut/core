@@ -7,12 +7,12 @@ $default: (
 	colorBackground: k19.$grey--50,
 	colorDivider: k19.$grey--200,
 
-	colornavbarBackground: k19.$grey--A100,
-	colornavbarAction: k19.$grey--900,
-	colornavbarActionHover: k19.$grey--400,
-	colornavbarActionActive: k19.$grey--900,
-	colornavbarActionIconActive: k19.$grey--A100,
-	shadownavbar: rgba(0, 0, 0, 0.16) 0px 1px 4px,
+	colorNavBarBackground: k19.$grey--A100,
+	colorNavBarAction: k19.$grey--900,
+	colorNavBarActionHover: k19.$grey--400,
+	colorNavBarActionActive: k19.$grey--900,
+	colorNavBarActionIconActive: k19.$grey--A100,
+	shadowNavBar: rgba(0, 0, 0, 0.16) 0px 1px 4px,
 
 	colorMainBackground: k19.$grey--100,
 
@@ -26,6 +26,10 @@ $default: (
 		rgba(0, 0, 0, 0.12) 0px 1px 3px,
 		rgba(0, 0, 0, 0.24) 0px 1px 2px
 	),
+
+	colorButtonBackground: k19.$grey--300,
+	colorButtonBackgroundHover: k19.$grey--400,
+	colorButtonBackgroundActive: k19.$grey--900,
 
 );
 
