@@ -40,7 +40,7 @@
 		&:last-child  { margin-bottom: 0; }
 
 		/// Стили для модификатора элемента Card Subtitle (shorten)
-		/// @name CardTitleShorten
+		/// @name CardSubtitleShorten
 		/// @group Card
 		/// @since 2.0.0
 		/// @access public
@@ -132,7 +132,6 @@
 			@include k19.position-relative();
 
 			@include k19.transition(
-				border-color $transition-duration, //
 				color $transition-duration,     // тут в принципе понятно все
 				background $transition-duration // время переходов для свойств
 			);
@@ -140,7 +139,6 @@
 			&:hover { background-color: var(--colorCardClickableBackgroundHover); }
 			&:active {
 				background-color: var(--colorCardClickableBackgroundActive);
-				border-color: var(--colorCardClickableBackgroundActive);
 				color: white;
 			}
 
@@ -148,7 +146,7 @@
 				border-bottom: 1px solid var(--colorDivider);
 			}
 
-			&:first-child {
+			&.first-corner:first-child {
 				@include k19.border-top-radius();
 			}
 
@@ -161,6 +159,11 @@
 
 				text-decoration: none;
 				color: inherit;
+
+				.material-icons {
+					font-size: $font-size_h5;
+					@include k19.opacity(.5);
+				}
 
 				&::before {
 					content: '';
