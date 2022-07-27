@@ -1,0 +1,54 @@
+---
+head:
+  title: "Приветствие"
+---
+
+{% import '@macro/main.njk' as macro %}
+{% import '@macro/footer.njk' as footer_macro %}
+
+<!DOCTYPE html>
+<html class="theme-light">
+	<head>
+		{% include 'head.njk' %}
+	</head>
+	<body>
+
+		<main>
+			<div class="container">
+				<div class="row">
+					<div class="col-12"><br><br><br></div>
+					<div class="col-12 col-md-6">
+						{{ macro.image("https://avatars.githubusercontent.com/u/108356980?s=200&v=4", "Логотип проекта", "150px", "img--circle")}}
+						<h1>Добро пожаловать!</h1>
+						<p>TutLinux - это открытый проект с открытым исходным кодом (интернет-ресурс), разработанный для предоставления минимальной информации о программном обеспечении, используемом в дистрибутивах Linux.</p>
+					</div>
+					<div class="col-12 col-md-6">
+						<div class="card">
+							<h5 class="card__title">Настройка</h5>
+							<p class="card__subtitle">Пожалуйста, проведите первоначальную настройку сайта с учётом личных предпочтений.</p>
+							<p class="card__subtitle" disabled>В принципе, Вы можете оставить все настройки по умолчанию, а после вернуться к ним.</p>
+							<h6 class="card__title">Тема сайта</h6>
+							<label>
+								<input type="radio" name="theme" value="light" onchange="themerSet(themes.light, colors.light)" checked>
+								<span>Светлая</span>
+							</label><br>
+							<label>
+								<input type="radio" name="theme" value="dark" onchange="themerSet(themes.dark, colors.dark)">
+								<span>Тёмная</span>
+							</label><br>
+						</div>
+						<br>
+						<button class="button mi" onclick="window.location.replace('../');">Продолжить <span class="material-icons">navigate_next</span></button>
+					</div>
+				</div>
+			</div>
+			<br>
+		</main>
+
+		{% include 'footer.njk'%}
+		{% include 'styles.njk' %}
+
+		<script src="/scripts/themer.js"></script>
+
+	</body>
+</html>

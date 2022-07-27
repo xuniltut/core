@@ -1,0 +1,9 @@
+@use '../lib.kalium19' as k19;
+
+%link-before {
+	&::before {
+		content: '';
+		@include k19.position-absolute(0, null, null, 0);
+		@include k19.wh(100%);
+	}
+}

@@ -1,0 +1,14 @@
+{% macro image(src, alt, size, class, loading=lazy) %}
+	<img
+		{% if class != null %}
+			class="{{ class }}"
+		{% endif %}
+		{% if size != null %}
+			width="{{ size }}"
+			height="{{ size }}"
+		{% endif %}
+		src="{{ src }}"
+		alt="{{ alt }}"
+		title="{{ alt }}"
+		loading="{{ loading }}">
+{% endmacro %}

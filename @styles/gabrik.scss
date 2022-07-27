@@ -2,11 +2,12 @@
 @use 'sass:map';
 @use 'sass:string';
 
+@use 'themer' as *;
 @use 'vars' as *;
-@use 'theme' as *;
 @use 'base' as *;
 
 @use 'component/header' as *;
 @use 'component/navbar' as *;
 @use 'component/footer' as *;
 @use 'component/card' as *;
+@use 'component/button' as *;

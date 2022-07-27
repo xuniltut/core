@@ -1,0 +1,39 @@
+@use 'themes' as *;
+
+$colorScheme: false !default;
+$consoleMessage: true !default;
+
+/// Цикл, генерирующий :root с переменными для темы
+/// @example SCSS
+/// $themes: (
+/// 	light: (
+/// 		colorBackground: white,
+/// 		colorFont: black,
+/// 	)
+/// );
+/// @example CSS
+/// :root[class=theme-light] {
+///   color-scheme: light;
+///   --colorBackground: white;
+///   --colorFont: black;
+/// }
+
+@each $theme-name, $map in $themes {
+
+	:root[class="theme-#{$theme-name}"] {
+
+		@if $colorScheme == true {
+			color-scheme: #{$theme-name};
+		}
+
+		@each $key, $value in $map {
+			--#{$key}: #{$value};
+		}
+
+		@if $consoleMessage {
+			@warn '⚠ Themer: переменные для темы #{$theme-name} сгенерированы!'
+		}
+
+	}
+
+}

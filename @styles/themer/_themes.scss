@@ -1,0 +1,84 @@
+@use '../lib.kalium19' as k19;
+
+$themes: (
+
+	light: (
+
+		colorAccent: k19.$blue--500,
+		colorFont: k19.$grey--900,
+		colorBackground: k19.$grey--50,
+		colorDivider: k19.$grey--200,
+
+		colorNavBarBackground: k19.$grey--A100,
+		colorNavBarAction: k19.$grey--900,
+		colorNavBarActionHover: k19.$grey--400,
+		colorNavBarActionActive: k19.$grey--900,
+		colorNavBarActionIconActive: k19.$grey--A100,
+		shadowNavBar: rgba(0, 0, 0, 0.16) 0px 1px 4px,
+
+		colorMainBackground: k19.$grey--100,
+
+		colorFooterFont: inherit,
+		colorFooterBackground: var(--colorBackground),
+
+		colorCardBackground: k19.$grey--50,
+		colorCardClickableBackgroundHover: k19.$grey--200,
+		colorCardClickableBackgroundActive: k19.$grey--900,
+		shadowCard: (
+			rgba(0, 0, 0, 0.12) 0px 1px 3px,
+			rgba(0, 0, 0, 0.24) 0px 1px 2px
+		),
+
+		colorButtonBackground: k19.$grey--300,
+		colorButtonBackgroundHover: k19.$grey--400,
+		colorButtonBackgroundActive: k19.$grey--900,
+
+		colorRadioBackgroundChecked: k19.$grey--900,
+		colorRadioBorderHover: k19.$grey--400,
+		colorRadioBackgroundHover: k19.$grey--600,
+		shadowRadioFocus: 0 0 0 0.2rem rgba(0, 0, 0, 0.25)
+
+	),
+
+	dark: (
+
+		colorAccent: k19.$blue--500,
+		colorFont: k19.$grey--50,
+		colorBackground: k19.$grey--800,
+		colorDivider: k19.$grey--700,
+
+		colorNavBarBackground: k19.$grey--800,
+		colorNavBarAction: k19.$grey--100,
+		colorNavBarActionHover: k19.$grey--700,
+		colorNavBarActionActive: k19.$grey--500,
+		colorNavBarActionIconActive: k19.$grey--A100,
+		shadowNavBar: (
+			rgba(0, 0, 0, 0.426) 0px 1px 2px 0px,
+			rgba(0, 0, 0, 0.179) 0px 1px 3px 1px
+		),
+
+		colorMainBackground: k19.$grey--900,
+
+		colorFooterFont: inherit,
+		colorFooterBackground: var(--colorBackground),
+
+		colorCardBackground: k19.$grey--800,
+		colorCardClickableBackgroundHover: k19.$grey--700,
+		colorCardClickableBackgroundActive: k19.$grey--600,
+		shadowCard: (
+			rgba(0, 0, 0, 0.285) 0px 1px 3px,
+			rgba(0, 0, 0, 0.358) 0px 1px 2px
+		),
+
+		colorButtonBackground: k19.$grey--800,
+		colorButtonBackgroundHover: k19.$grey--700,
+		colorButtonBackgroundActive: k19.$grey--500,
+
+		colorRadioBackgroundChecked: k19.$grey--100,
+		colorRadioBorderHover: k19.$grey--300,
+		colorRadioBackgroundHover: k19.$grey--700,
+		shadowRadioFocus: 0 0 0 0.2rem rgba(255, 255, 255, 0.25)
+
+	),
+
+);

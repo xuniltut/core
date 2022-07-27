@@ -31,7 +31,7 @@ yandex_metrika  : null
 # * {string} image_alt  : описание изображения для скринридера
 # * {string} site_name  : название сайта
 open_graph:
-  enable     : true
+  enable     : false
   url        : "https://github.com/xuniltut"
   type       : "website" # or article
   title      : "TutLinux - справочник по Linux"
@@ -51,7 +51,7 @@ open_graph:
 # * {string}  image_alt  : описание изображения для скринридера
 # * {boolean} dnt        : запретить Twitter использовать информацию о вашем сайте в целях персонализации
 twitter:
-  enable     : true
+  enable     : false
   card       : "summary"
   site       : "@rx1310"
   creator    : "@rx1310"

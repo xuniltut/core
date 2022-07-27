@@ -1,0 +1,60 @@
+@use '../lib.kalium19' as k19;
+
+label {
+
+	input[type="radio"] {
+
+		z-index: -1;
+
+		@include k19.position-absolute();
+		@include k19.opacity(0);
+
+		&:not(:disabled):not(:checked)+span:hover::before {
+			border-color: var(--colorRadioBorderHover);
+		}
+
+		&:not(:disabled):active+span::before {
+			background-color: var(--colorRadioBackgroundHover);
+			border-color: var(--colorRadioBackgroundHover);
+		}
+
+		&:focus+span::before {
+			@include k19.box-shadow(var(--shadowRadioFocus));
+		}
+
+		&:checked+span::before {
+			border-color: var(--colorRadioBackgroundChecked);
+			background-color: var(--colorRadioBackgroundChecked);
+			background-image: none;
+		}
+
+	}
+
+	span {
+
+		@include k19.flex(inline);
+		@include k19.align-items(center);
+		@include k19.unselect();
+
+		&::before {
+
+			content: '';
+			display: inline-block;
+			border: 1px solid var(--colorFont);
+			margin-right: 0.5em;
+
+			background: {
+				repeat: no-repeat;
+				position: center center;
+				size: 50% 50%;
+			}
+
+			@include k19.border-radius(10px);
+			@include k19.wh(1em);
+			@include k19.flex-shrink(0);
+			@include k19.flex-grow(0);
+
+		}
+	}
+
+}

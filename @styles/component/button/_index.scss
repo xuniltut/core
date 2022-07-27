@@ -1,0 +1,58 @@
+@use '../../lib.kalium19' as k19;
+@use '../../utils/extends' as *;
+
+/// Стили для элемента Button
+/// @name Button
+/// @since 2.0.0
+/// @access public
+/// @require {lib} kalium19
+@include k19.b(button) {
+
+	@include k19.border-radius(); // добавляю закругление краёв кнопки
+	@include k19.transition(
+		color .3s,
+		background .3s,
+		transform .3s
+	);
+
+	text: {
+		overflow : ellipsis;
+		transform: uppercase; // текст будет в верхнем регистре
+		align    : center; // выравниваю текст по центру
+	}
+
+	font: {
+		weight: bold; // делаю текст жирным (точнее шрифт)
+		size  : 80%; // размер шрифта
+	}
+
+	.material-icons { margin-right: -6px; } // корректировка иконок для выравнивания
+
+	color         : inherit; // цвет кнопки
+	background    : var(--colorButtonBackground); // цвет фона кнопки
+	margin        : 0; // внешние отступы
+	padding       : .5em .8em; // внутренние отступы
+	letter-spacing: .1em;
+	cursor        : pointer; //
+	border        : none; // убираю браузерные стили бордюра
+
+	@include k19.position-relative(); // относительно позиционирую
+
+	&:hover,
+	&:focus {
+		background-color: var(--colorButtonBackgroundHover); // цвет фона кнопки при фокусе или наведении мыши
+	}
+
+	&:active {
+		color: white; // цвет текста кнопки при нажатии
+		background-color: var(--colorButtonBackgroundActive); // цвет фона кнопки при нажатии
+		@include k19.transform(scale(.970)); // вдавливание кнопки при нажатии
+	}
+
+	a {
+		text-decoration: none; // убираем подчеркивания ссылок
+		color: inherit; // цвет текста берем у родителей
+		@extend %link-before;
+	}
+
+}

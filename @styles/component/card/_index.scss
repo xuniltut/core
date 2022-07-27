@@ -1,5 +1,6 @@
 @use '../../lib.kalium19' as k19;
 @use '../../vars' as *;
+@use '../../utils/extends' as *;
 
 /// Стили для элемента Card
 /// @name Card
@@ -117,58 +118,54 @@
 	/// @require {lib} kalium19
 	@include k19.e(list) {
 
-		list-style: none;
-    margin-block-end: 0;
-    padding-inline-start: 0;
-		margin: -1em;
+		list-style: none; // сбрасываю стили списков (убираю булеты)
+    margin-block-end: 0; // обнуляю отступы
+    padding-inline-start: 0; // обнуляю отступы
+		margin: -1em; // указываю отрицательный внешний отступ списку, чтобы он прилегал к границе карточки
 
 		li {
 
-			padding: 1em;
-    	cursor: pointer;
-			font-weight: bold;
+			padding: .9em 1em; // устанавливаю внутренние отступы пункта
+    	cursor: pointer; // меняю курсор
+			font-weight: bold; // устанавливаю жирный шрифт
 
-			@include k19.position-relative();
+			@include k19.position-relative(); // относительно позиционирую
 
 			@include k19.transition(
 				color $transition-duration,     // тут в принципе понятно все
 				background $transition-duration // время переходов для свойств
 			);
 
-			&:hover { background-color: var(--colorCardClickableBackgroundHover); }
+			&:hover { background-color: var(--colorCardClickableBackgroundHover); } // цвет фона пункта при наведении
 			&:active {
-				background-color: var(--colorCardClickableBackgroundActive);
-				color: white;
+				background-color: var(--colorCardClickableBackgroundActive); // цвет фона пункта при нажатии
+				color: white; // цвет текста пункта при нажатии
 			}
 
 			&:not(:last-child) {
-				border-bottom: 1px solid var(--colorDivider);
+				border-bottom: 1px solid var(--colorDivider); // если не последний элемент в спике, то добавляю ему бордер снизу
 			}
 
-			&.first-corner:first-child {
-				@include k19.border-top-radius();
+			&.top--cornered:first-child {
+				@include k19.border-top-radius(); // для класса `top--cornered` первый пункт списка будет закруглен сверху
 			}
 
 			&:last-child {
-				@include k19.border-bottom-radius();
+				@include k19.border-bottom-radius(); // последний пункт списка будет закруглен снизу
 			}
 
 
 			a {
 
-				text-decoration: none;
-				color: inherit;
+				text-decoration: none; // убираем декорации ссылки
+				color: inherit; // цвет текста ссылки берем у родителя
 
 				.material-icons {
-					font-size: $font-size_h5;
-					@include k19.opacity(.5);
+					font-size: $font-size_h5; // устанавливаем размер шрифта иконки
+					@include k19.opacity(.5); // устанавливаем прозрачность
 				}
 
-				&::before {
-					content: '';
-					@include k19.position-absolute(0, null, null, 0);
-					@include k19.wh(100%);
-				}
+				@extend %link-before; // растягиеваем поле ссылки по всеё площади
 
 			}
 

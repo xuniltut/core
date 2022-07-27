@@ -5,7 +5,7 @@ social:
   github:
     url: "https://github.com/xuniltut"
     title: "GitHub"
-    iconColor: "#212121"
+    iconColor: "currentColor"
   telegram:
     url: "https://t.me/tutlinux"
     title: "Telegram"

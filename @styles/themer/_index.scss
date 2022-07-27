@@ -1,0 +1,7 @@
+// ? Настройка модуля Themer
+// * [1] - генерация свойства `color-scheme`
+// * [2] - вывод в консоль сообщения о генерации темы
+@use 'themer' as * with (
+	$colorScheme: true, // 1
+	$consoleMessage: false // 2
+);
