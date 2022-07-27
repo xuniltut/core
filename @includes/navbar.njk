@@ -6,23 +6,30 @@
 			<div class="col-12">
 				<div class="navbar">
 
-					{% if navbar.actionSearch == false %}
-						{{ navbar_macro.action(null, "Назад", "Переход на шаг назад", "arrow_back", "window.history.back()", false) }}
-					{% else %}
-						{{ navbar_macro.action(null, "Поиск", "Переход к поиску", "search", "window.history.back()", false) }}
-					{% endif %}
+					<div class="navbar__block">
 
-					<h5 class="navbar__title hidden">
-						{% if navbar.title != 'default' %}
-							{{ navbar.title }}
+						{% if navbar.actionThemer == false %}
+							{{ navbar_macro.action(null, "Назад", "Переход на шаг назад", "arrow_back", "window.history.back()", false) }}
 						{% else %}
-							{{ head.title }}
+							{{ navbar_macro.action(null, "Тема сайта", "Сменить тему сайта", "dark_mode", "themerToggle()", false) }}
 						{% endif %}
-					</h5>
 
-					{% if navbar.actionScrollUp %}
+						<h5 class="navbar__title hidden">
+							{% if navbar.title != 'default' %}
+								{{ navbar.title }}
+							{% else %}
+								{{ head.title }}
+							{% endif %}
+						</h5>
+
+					</div>
+
+					<div class="navbar__block">
+						{% if navbar.actionSearch %}
+							{{ navbar_macro.action(null, "Поиск", "Переход к поиску", "search", "window.history.back()", false) }}
+						{% endif %}
 						{{ navbar_macro.action("scrollUp", "К началу", "Переход к началу страницы", "keyboard_double_arrow_up", "scrollUp()", true) }}
-					{% endif %}
+					</div>
 
 				</div>
 			</div>

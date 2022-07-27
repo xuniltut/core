@@ -25,12 +25,25 @@
 		margin        : 0; // обнуляю внешние отступы
 		font-size     : $font-size_h6; // устанавливаю размер шрифта
 		color         : inherit; // цвет текста по умолчанию (от род. элемента)
-		text-transform: lowercase; // текст начинается со строчной буквы
+		// text-transform: lowercase; // текст начинается со строчной буквы
 
 		&.hidden { color: transparent; } // скрываю текст, делая цвет шрифта прозрачным
 
 		@include k19.transition(color $transition-duration); // указываю время перехода (`transition`) для свойства `color`
 
+	}
+
+	/// Стили для элемента NavBar Block
+	/// @name Block
+	/// @group navbar
+	/// @since 2.0.0
+	/// @access public
+	@include k19.e(block) {
+		gap: 5px;
+		@include k19.flex(); // устанавливаю `display: flex`
+		@include k19.flex-direction(row);
+		@include k19.justify-content(flex-start);
+		@include k19.align-items(center); // флексы выравниваются по линии поперечной оси.
 	}
 
 	/// Стили для элемента NavBar Action
