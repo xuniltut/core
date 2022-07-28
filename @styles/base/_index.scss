@@ -37,3 +37,7 @@ a {
 	@include k19.align-items(center);
 	.material-icons { margin-right: 8px; }
 }
+
+ol {
+	padding-inline-start: 1em;
+}

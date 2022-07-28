@@ -12,3 +12,10 @@ h3 { font-size: $font-size_h3; }
 h4 { font-size: $font-size_h4; }
 h5 { font-size: $font-size_h5; }
 h6 { font-size: $font-size_h6; }
+
+blockquote {
+	border-left: 5px solid var(--colorDivider);
+	margin-left: 0;
+	padding-left: 1em;
+}
+

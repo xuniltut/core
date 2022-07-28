@@ -126,7 +126,6 @@
 		li {
 
 			padding: .9em 1em; // устанавливаю внутренние отступы пункта
-    	cursor: pointer; // меняю курсор
 			font-weight: bold; // устанавливаю жирный шрифт
 
 			@include k19.position-relative(); // относительно позиционирую
@@ -157,12 +156,14 @@
 
 			a {
 
+				cursor: pointer; // меняю курсор
 				text-decoration: none; // убираем декорации ссылки
 				color: inherit; // цвет текста ссылки берем у родителя
 
 				.material-icons {
+					margin-top: -1px;
 					font-size: $font-size_h5; // устанавливаем размер шрифта иконки
-					@include k19.opacity(.5); // устанавливаем прозрачность
+					@include k19.opacity(.8); // устанавливаем прозрачность
 				}
 
 				@extend %link-before; // растягиеваем поле ссылки по всеё площади
