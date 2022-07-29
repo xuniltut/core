@@ -1,0 +1,27 @@
+{
+  "package": {
+    "title": "TutLinux Styles",
+    "name": "TutLinux Core Styles",
+    "homepage": "https://github.com/xuniltut/core",
+    "description": "Основной репозиторий проекта @xuniltut, который содержит всю вёрстку и стили (Nunjucks + @sass), сборщик (@11ty) и JavaScript-код"
+  },
+	"view": {
+		"company": {
+			"name": "rx1310",
+			"trademarkYears": "2022",
+			"homepage": "https://github.com/xuniltut/core",
+			"logoPath": "https://avatars.githubusercontent.com/u/108356980?s=200&v=4"
+		},
+		"links": {
+			"github": "https://github.com/xuniltut/core",
+			"twitter": "https://twitter.com/rx1310",
+			"gitter": "https://t.me/xuniltut"
+		},
+		"library": {
+			"homepage": "https://github.com/xuniltut/core",
+			"name": "xuniltut"
+		},
+		"logoPath": "https://avatars.githubusercontent.com/u/108356980?s=200&v=4"
+	},
+  "autofill": "false"
+}

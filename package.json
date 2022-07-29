@@ -10,7 +10,8 @@
     "build:sass": "sass @styles/:dist/styles/ --style compressed",
     "watch:11ty": "npx @11ty/eleventy --serve --config=11ty.config.js",
     "watch:sass": "sass --no-source-map @styles/:dist/styles/ --watch",
-    "watch:sass-sourcemap": "sass @styles/:dist/styles/ --watch"
+    "watch:sass-sourcemap": "sass @styles/:dist/styles/ --watch",
+    "docs:sass": "sassdoc @styles --theme default --dest docs/styles/ --config=.sassdocrc"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "npm-run-all": "^4.1.5",
     "nunjucks": "^3.2.3",
     "sanitize.css": "^13.0.0",
-    "sass": "^1.54.0"
+    "sass": "^1.54.0",
+    "sassdoc": "^2.7.4"
   }
 }

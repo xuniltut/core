@@ -57,8 +57,71 @@ $font-size_h6: $font-size;
 $transition-duration: .3s;
 
 /// Значение `z-index` для элементов
+/// @type Map
 /// @access public
 /// @prop {int} $z-indexes.navbar [1] - значение для элемента navbar
 $z-indexes: (
 	navbar: 1
+);
+
+/// Радиус скругления углов у элементов при использовании миксина `border-radius` из пакета Kalium19
+/// @group kalium19
+/// @type Int
+/// @access public
+$k19_border-radius: 8px;
+
+/// Предустановки для миксинов `b`, `e`, & `m` (BEM) из пакета Kalium19
+/// @group kalium19
+/// @type Map
+/// @access public
+/// @prop {int | string} $k19_bem.element [__] - префиксы для связки элемента и блока
+/// @prop {int | string} $k19_bem.modifier [--] - префиксы для модификатора
+$k19_bem: (
+	element: "__",
+	modifier: "--"
+);
+
+/// Предустановки для миксина `respond-to` из пакета kalium19
+/// @group kalium19
+/// @type Map
+/// @access public
+/// @prop {string} $k19_breakpoints.xs - брейкпоинт ширины экрана в 0px (сток)
+/// @prop {string} $k19_breakpoints.sm - брейкпоинт ширины экрана в 576px
+/// @prop {string} $k19_breakpoints.md - брейкпоинт ширины экрана в 768px
+/// @prop {string} $k19_breakpoints.lg - брейкпоинт ширины экрана в 992px
+/// @prop {string} $k19_breakpoints.xl - брейкпоинт ширины экрана в 1200px
+/// @prop {string} $k19_breakpoints.xxl - брейкпоинт ширины экрана в 1400px
+$k19_breakpoints: (
+	xs: (min-width: 0),
+	sm: (min-width: 576px),
+	md: (min-width: 768px),
+	lg: (min-width: 992px),
+	xl: (min-width: 1200px),
+	xxl: (min-width: 1400px)
+);
+
+/// Предустановки для миксина `keyframes` из пакета Kalium19
+/// @group kalium19
+/// @type Map
+/// @access public
+/// @prop {boolean} $k19_keyframes.webkit [true] - генерация `keyframes` для браузера на базе движка WebKit
+/// @prop {boolean} $k19_keyframes.moz [true] - генерация `keyframes` для браузера на базе движка Mozilla Firefox
+/// @prop {boolean} $k19_keyframes.ms [true] - генерация `keyframes` для браузера на базе движка от Microsoft
+/// @prop {boolean} $k19_keyframes.o [true] - генерация `keyframes` для браузера Opera
+$k19_keyframes: (
+	webkit: true,
+	moz: true,
+	ms: true,
+	o: true
+);
+
+/// Предустановки для миксина `opacity` из пакета Kalium19
+/// @group kalium19
+/// @type Map
+/// @access public
+/// @prop {boolean} $k19_opacity.ie5 [true] - генерация CSS-правила `opacity` (или его имитация) для браузера Microsoft Internet Explorer 5+
+/// @prop {boolean} $k19_opacity.ie8 [true] - генерация CSS-правила `opacity` (или его имитация) для браузера Microsoft Internet Explorer 8+
+$k19_opacity: (
+	ie5: true,
+	ie8: true
 );

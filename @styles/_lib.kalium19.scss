@@ -1,45 +1,9 @@
-/// Настройка модуля Kalium19
-/// @access public
-/// @author Haba Kudzaev (rx1310)
-/// @link https://github.com/rx1310 GitHub
-/// @param {string} $border-radius [12px] - установка значения по умолчанию для свойства `border-radius`
-/// @param {map} $breakpoints - список нужных расширений экрана (миксин respond-to)
-/// @prop {string} $bem.element ["__"] - установка префикса для элемента (миксин BEM)
-/// @prop {string} $bem.modifier ["--"] - установка префикса для модификатора (миксин BEM)
-/// @prop {boolean} $keyframes.webkit [true] - активация генерации `keyframes` для WebKit
-/// @prop {boolean} $keyframes.moz [true] - активация генерации `keyframes` для Firefox
-/// @prop {boolean} $keyframes.ms [true] - активация генерации `keyframes` для MS Edge
-/// @prop {boolean} $keyframes.o [true] - активация генерации `keyframes` для Opera
-/// @prop {boolean} $opacity.ie5 [true] - активация генерации `opacity` для IE5
-/// @prop {boolean} $opacity.ie8 [true] - активация генерации `opacity` для IE8
+@use 'vars' as *;
+
 @forward '../node_modules/@rx1310/kalium19' with (
-
-	$border-radius: 8px,
-
-	$bem: (
-		element: "__",
-		modifier: "--"
-	),
-
-	$breakpoints: (
-		xs: (min-width: 0),
-		sm: (min-width: 576px),
-		md: (min-width: 768px),
-		lg: (min-width: 992px),
-		xl: (min-width: 1200px),
-		xxl: (min-width: 1400px)
-	),
-
-	$keyframes: (
-		webkit: true,
-		moz: true,
-		ms: true,
-		o: true
-	),
-
-	$opacity: (
-		ie5: true,
-		ie8: true
-	)
-
+	$border-radius: $k19_border-radius,
+	$bem          : $k19_bem,
+	$breakpoints  : $k19_breakpoints,
+	$keyframes    : $k19_keyframes,
+	$opacity      : $k19_opacity
 );
