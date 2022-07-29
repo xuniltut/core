@@ -11,7 +11,7 @@
 		".gitignore"     : true,
 		"LICENSE"        : true,
 		".editorconfig"  : true,
-		"docs/": true
+		"docs/"          : true
 	}
 
 }
