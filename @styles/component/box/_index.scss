@@ -1,39 +1,23 @@
 @use '../../lib.kalium19' as k19;
 
-/// Стили для элемента Box Horizontal
-/// @name HorizontalBox
-/// @group Box
-/// @since 2.0.0
-/// @access public
-/// @require {lib} kalium19
-/// @deprecated На данный момент HorizontalBox не используется
-@include k19.b(horizontal-box) {
-
-	@include k19.flex(); // устанавливаем `display: flex`
-	@include k19.flex-wrap(); // устанавливаем `flex-wrap: nowrap`
-	@include k19.border-radius();
+.hr-box {
 
 	overflow-x: auto;
 	padding: 1em;
 	border: 1px solid #ccc;
 	background-color: rgb(209, 209, 209);
 
-	/// Стили для элемента Box Horizontal Item
-	/// @name HorizontalBoxItem
-	/// @group Box
-	/// @since 2.0.0
-	/// @access public
-	/// @require {lib} kalium19
-	@include k19.e(item) {
+	@include k19.flex();
+	@include k19.flex-wrap();
+	@include k19.border-radius();
 
-		flex: 0 0 auto; // флексы
-		margin-right: 10px; // отступ справа
-		width: 330px; // ширина элемента
+	&--item {
 
-		// для последнего элемента убираем внешний правый отступ
-		&:last-child {
-			margin-right: 0;
-		}
+		flex: 0 0 auto;
+		margin-right: 10px;
+		width: 330px;
+
+		&:last-child { margin-right: 0; }
 
 	}
 

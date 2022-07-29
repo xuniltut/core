@@ -1,41 +1,22 @@
 @use '../../lib.kalium19' as k19;
 @use '../../vars' as *;
-@use 'wrapper' as *;
 
-/// Стили для элемента Header
-/// @name Header
-/// @since 2.0.0
-/// @access public
-/// @require {lib} kalium19
-@include k19.b(header) {
+.header {
 
-	/// Стили для элемента Header Title
-	/// @name Title
-	/// @group Header
-	/// @since 2.0.0
-	/// @access public
-	@include k19.e(title) {}
+	&-wrapper { border-bottom: 2px solid var(--colorDivider); }
 
-	/// Стили для элемента Header Subtitle
-	/// @name Subtitle
-	/// @group Header
-	/// @since 2.0.0
-	/// @access public
-	@include k19.e(subtitle) {
-		margin-top: 0; // убираю верхний отступ тега `p`
-		@include k19.opacity(.8); // устанавливаю прозрачность подзаголовка на значение `0.8`
+	// &__title {}
+
+	&__subtitle {
+		@include k19.opacity(.8);
+		margin-top: 0;
 	}
 
-	/// Стили для элемента Header Icon
-	/// @name Icon
-	/// @group Header
-	/// @since 2.0.0
-	/// @access public
-	@include k19.e(icon) {
-		float: right; // прижимаю иконку (тег `img`) вправо
-		margin: 0 0 1.1em 1.3em; // устанавливаю отступ слева и снизу, чтобы текст не налегал на `img`
-		@include k19.wh(100px); // ширина и высота элемента составляет 100px
-		@include k19.border-radius(); // устанавливаю закругление углов (значение по умолчанию в файле _lib.kalium19.scss)
+	&__icon {
+		@include k19.wh(100px);
+		@include k19.border-radius();
+		float: right;
+		margin: 0 0 1.1em 1.3em;
 	}
 
 }

@@ -38,6 +38,11 @@ label {
 
 		&::before {
 
+			@include k19.border-radius(10px);
+			@include k19.wh(1em);
+			@include k19.flex-shrink(0);
+			@include k19.flex-grow(0);
+
 			content: '';
 			display: inline-block;
 			border: 1px solid var(--colorFont);
@@ -48,11 +53,6 @@ label {
 				position: center center;
 				size: 50% 50%;
 			}
-
-			@include k19.border-radius(10px);
-			@include k19.wh(1em);
-			@include k19.flex-shrink(0);
-			@include k19.flex-grow(0);
 
 		}
 	}

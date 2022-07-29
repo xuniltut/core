@@ -7,8 +7,10 @@
 			width="{{ size }}"
 			height="{{ size }}"
 		{% endif %}
+		{% if loading != null %}
+			loading="{{ loading }}"
+		{% endif %}
 		src="{{ src }}"
 		alt="{{ alt }}"
-		title="{{ alt }}"
-		loading="{{ loading }}">
+		title="{{ alt }}">
 {% endmacro %}

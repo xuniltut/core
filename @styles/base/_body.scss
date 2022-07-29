@@ -1,10 +1,5 @@
 @use '../lib.kalium19' as k19;
 
-html {
-	background-color: unselect;
-	@include k19.opacity(1);
-}
-
 body {
 
 	font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
@@ -17,10 +12,6 @@ body {
 
 	@include k19.scroll-behavior(smooth);
 	@include k19.unselect;
-	@include k19.prefixer(
-		text-size-adjust,
-		100%,
-		webkit moz ms
-	);
+	@include k19.prefixer(text-size-adjust, 100%, webkit moz ms);
 
 }

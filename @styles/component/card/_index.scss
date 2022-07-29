@@ -2,171 +2,97 @@
 @use '../../vars' as *;
 @use '../../utils/extends' as *;
 
-/// Стили для элемента Card
-/// @name Card
-/// @since 2.0.0
-/// @access public
-/// @require {lib} kalium19
-@include k19.b(card) {
-
-	background-color: var(--colorCardBackground); // цвет карточки
-	padding         : 1em; // добавляю внутренние отступы
-	position        : relative; // относительно позиционирую
-	// margin-bottom   : 1em; // добавляю внешний нижний отступ
+.card {
 
 	@include k19.box-shadow(var(--shadowCard));
-	@include k19.border-radius(); // ну и скругления углов карточки
+	@include k19.border-radius();
+	@include k19.position-relative();
 
-	/// Стили для элемента Card Title
-	/// @name CardTitle
-	/// @group Card
-	/// @since 2.0.0
-	/// @access public
-	/// @require {lib} kalium19
-	@include k19.e(title) {
-		margin-top: 0 !important; // убираю отступ заголовка сверху
-		// font-size : $font-size_h5; // устанавливаю размер шрифта заголовка карточки
-	}
+	background-color: var(--colorCardBackground);
+	padding         : 1em;
+	// margin-bottom   : 1em;
 
-	/// Стили для элемента Card Subtitle
-	/// @name CardSubtitle
-	/// @group Card
-	/// @since 2.0.0
-	/// @access public
-	/// @require {lib} kalium19
-	@include k19.e(subtitle) {
-
-		&:first-child { margin-top:    0; }
-		&:last-child  { margin-bottom: 0; }
-
-		/// Стили для модификатора элемента Card Subtitle (shorten)
-		/// @name CardSubtitleShorten
-		/// @group Card
-		/// @since 2.0.0
-		/// @access public
-		/// @require {lib} kalium19
-		@include k19.m(shorten) {
-			@include k19.text-shorten(3); // ограничиваю допустимое количество строк
-		}
-
-	}
-
-	/// Стили для элемента Card Icon
-	/// @name CardIcon
-	/// @group Card
-	/// @since 2.0.0
-	/// @access public
-	/// @require {lib} kalium19
-	@include k19.e(icon) {
-
-		float : right; // прижимаю иконку к правой части родителя
-		margin: 0 0 1em 1em; // добавляю отступы
-
-		@include k19.wh(80px); // устанавливаю высоту и ширину иконки
-
-	}
-
-	/// Стили для элемента Card Link
-	/// @name CardLink
-	/// @group Card
-	/// @since 2.0.0
-	/// @access public
-	/// @require {lib} kalium19
-	@include k19.e(link) {
-		&::before {
-			content : '';
-			@include k19.wh(100%); // высота и ширина
-			@include k19.position-absolute(0, null, null, 0); // абсолютное позиционирование (top, left)
-		}
-	}
-
-	/// Стили для модификатора элемента Card (clickable)
-	/// @name CardClickable
-	/// @group Card
-	/// @since 2.0.0
-	/// @access public
-	/// @require {lib} kalium19
-	@include k19.m(clickable) {
-
-		cursor: pointer; // курсор "нажмите"
+	&--clickable {
 
 		@include k19.transition(
-			transform $transition-duration, //
-			color $transition-duration,     // тут в принципе понятно все
-			background $transition-duration // время переходов для свойств
+			transform $transition-duration,
+			color $transition-duration,
+			background $transition-duration
 		);
+
+		cursor: pointer;
 
 		&:hover,
 		&:focus,
-		&:focus-visible {
-			background-color: var(--colorCardClickableBackgroundHover); // цвет фона при фокусе или наведении на карточку
-		}
+		&:focus-visible { background-color: var(--colorCardClickableBackgroundHover); }
 
 		&:active {
-			color: white; //
-			background-color: var(--colorCardClickableBackgroundActive); // цвет
-			@include k19.transform(scale(1.005)); // вдавливаем элемент при нажатии
+			@include k19.transform(scale(1.005));
+			color: white;
+			background-color: var(--colorCardClickableBackgroundActive);
 		}
 
 	}
 
-	/// Стили для элемента Card List
-	/// @name CardList
-	/// @group Card
-	/// @since 2.0.0
-	/// @access public
-	/// @require {lib} kalium19
-	@include k19.e(list) {
+	&__link { @extend %link-before; }
+	&__title { margin-top: 0 !important; }
 
-		list-style: none; // сбрасываю стили списков (убираю булеты)
-    margin-block-end: 0; // обнуляю отступы
-    padding-inline-start: 0; // обнуляю отступы
-		margin: -1em; // указываю отрицательный внешний отступ списку, чтобы он прилегал к границе карточки
+	&__subtitle {
+		&:first-child { margin-top:    0; }
+		&:last-child  { margin-bottom: 0; }
+		&--shorten    { @include k19.text-shorten(3); }
+	}
+
+	&__icon {
+		@include k19.wh(80px);
+		float : right;
+		margin: 0 0 1em 1em;
+	}
+
+	&__list {
+
+		list-style: none;
+		margin-block-end: 0;
+		padding-inline-start: 0;
+		margin: -1em;
 
 		li {
 
-			padding: .9em 1em; // устанавливаю внутренние отступы пункта
-			font-weight: bold; // устанавливаю жирный шрифт
-
-			@include k19.position-relative(); // относительно позиционирую
-
-			@include k19.transition(
-				color $transition-duration,     // тут в принципе понятно все
-				background $transition-duration // время переходов для свойств
+			$transitions: (
+				color $transition-duration,
+				background $transition-duration
 			);
 
-			&:hover { background-color: var(--colorCardClickableBackgroundHover); } // цвет фона пункта при наведении
+			@include k19.position-relative();
+			@include k19.transition($transitions);
+
+			padding: .9em 1em;
+			font-weight: bold;
+
+			&:hover { background-color: var(--colorCardClickableBackgroundHover); }
+			&:not(:last-child) { border-bottom: 1px solid var(--colorDivider); }
+
 			&:active {
-				background-color: var(--colorCardClickableBackgroundActive); // цвет фона пункта при нажатии
-				color: white; // цвет текста пункта при нажатии
+				background-color: var(--colorCardClickableBackgroundActive);
+				color: white;
 			}
 
-			&:not(:last-child) {
-				border-bottom: 1px solid var(--colorDivider); // если не последний элемент в спике, то добавляю ему бордер снизу
-			}
-
-			&.top--cornered:first-child {
-				@include k19.border-top-radius(); // для класса `top--cornered` первый пункт списка будет закруглен сверху
-			}
-
-			&:last-child {
-				@include k19.border-bottom-radius(); // последний пункт списка будет закруглен снизу
-			}
-
+			&:first-child { @include k19.border-top-radius(); }
+			&:last-child  { @include k19.border-bottom-radius(); }
 
 			a {
 
-				cursor: pointer; // меняю курсор
-				text-decoration: none; // убираем декорации ссылки
-				color: inherit; // цвет текста ссылки берем у родителя
+				@extend %link-before;
+
+				cursor: pointer;
+				text-decoration: none;
+				color: inherit;
 
 				.material-icons {
+					@include k19.opacity(.8);
 					margin-top: -1px;
-					font-size: $font-size_h5; // устанавливаем размер шрифта иконки
-					@include k19.opacity(.8); // устанавливаем прозрачность
+					font-size: $font-size_h5;
 				}
-
-				@extend %link-before; // растягиеваем поле ссылки по всеё площади
 
 			}
 

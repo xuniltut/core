@@ -1,7 +1,6 @@
 @use '../lib.kalium19' as k19;
 
 @forward 'body';
-@forward 'h';
 @forward 'img' hide $maxSize;
 @forward 'typography';
 @forward 'main';
