@@ -1,0 +1,15 @@
+@use '../lib.kalium19' as k19;
+
+body {
+
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	@include k19.scroll-behavior(smooth);
+	@include k19.unselect;
+	@include k19.prefixer(text-size-adjust, 100%, webkit moz ms);
+
+}

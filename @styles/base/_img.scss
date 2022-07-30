@@ -1,0 +1,26 @@
+@use '../lib.kalium19' as k19;
+
+$maxSize: 100%;
+
+img {
+	max-width     : $maxSize;
+	max-height    : $maxSize;
+	border-style  : none;
+	overflow      : none;
+	vertical-align: middle;
+}
+
+.img {
+	&--rounded { @include k19.border-radius(); }
+	&--circled { @include k19.border-radius(100%); }
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+	figcaption {
+		@include k19.opacity(0.50);
+		margin-top: .5em;
+		text-align: center;
+	}
+}
