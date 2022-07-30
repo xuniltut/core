@@ -5,10 +5,21 @@
 /// @access public
 /// @see {mixin} themer
 $theme: (
+	
 	colorBackground: #000,
 	colorFont: k19.$grey--A100,
 	colorAccent: k19.$light-green--700, // TODO: подобрать более подходящий цвет акцента
-	colorDivider: k19.$grey--900
+	colorDivider: k19.$grey--900,
+
+	colorNavAction: k19.$grey--50,
+	colorNavActionHover: k19.$grey--900,
+	colorNavActionActive: k19.$grey--800,
+	colorNavActionIconActive: k19.$grey--50,
+
+);
+
+$z-indexes: (
+	nav: 1
 );
 
 /// Продолжительность перехода `transition`

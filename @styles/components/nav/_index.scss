@@ -1,0 +1,91 @@
+@use '../../lib.kalium19' as k19;
+@use '../../vars' as *;
+@use '../../utils/mixins' as *;
+
+.nav {
+
+	&-container {
+
+		@include position-sticky();
+		@include k19.transition(opacity $transition-duration);
+
+		background-color: var(--colorBackground);
+		border-bottom: 1px solid var(--colorDivider);
+		z-index: k19.map-deep-get($z-indexes, nav);
+
+	}
+
+	@include k19.flex();
+	@include k19.justify-content(space-between);
+	@include k19.align-items(center);
+
+	padding: .5em 0;
+
+	&__title {
+
+		@include k19.transition(color $transition-duration);
+
+		margin        : 0;
+		font-size     : $font-size_h6;
+		color         : inherit;
+
+		&.hidden { color: transparent; }
+
+	}
+
+	&__block {
+		@include k19.flex();
+		@include k19.flex-direction(row);
+		@include k19.justify-content(flex-start);
+		@include k19.align-items(center);
+		gap: 5px;
+	}
+
+	&__action {
+
+		@include k19.flex();
+		@include k19.justify-content(center);
+		@include k19.align-items(center);
+		@include k19.border-radius(100px);
+		@include k19.wh(38px);
+		@include k19.transition(
+			color $transition-duration,
+			background-color $transition-duration
+		);
+
+		color          : var(--colorNavAction);
+		vertical-align : middle;
+		position       : relative;
+		overflow       : hidden;
+		text-decoration: none;
+		border         : none;
+		cursor         : pointer;
+		background     : transparent;
+
+		&:hover,
+		&:focus { background: var(--colorNavActionHover); }
+
+		&::before:hover {
+			@include k19.wh(38px);
+			@include k19.position-absolute(0);
+			display: block;
+			content: '';
+		}
+
+		&:active {
+			color: var(--colorNavActionIconActive);
+			background-color: var(--colorNavActionActive);
+		}
+
+		&:first-child { margin-left : -9px; }
+		&:last-child  { margin-right: -5px; }
+
+		&--disabled {
+			@include k19.opacity(0.20);
+			pointer-events: none;
+			cursor: not-allowed;
+		}
+
+	}
+
+}

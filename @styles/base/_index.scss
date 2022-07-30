@@ -32,7 +32,10 @@ a {
 .mi {
 	@include k19.flex();
 	@include k19.align-items(center);
-	.material-icons { margin-right: 8px; }
+	.material-icon,
+	.material-symbols-outlined,
+	.material-symbols-rounded,
+	.material-symbols-sharp { margin-right: 8px; }
 }
 
 ol {

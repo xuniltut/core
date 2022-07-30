@@ -1,0 +1,27 @@
+{% macro action(id, title, aria_label, icon, onclick, isActionDisabled) %}
+	<button
+		id="{{ id }}"
+		class="nav__action {{ "nav__action--disabled" if isActionDisabled }} material-symbols-outlined"
+		title="{{ title }}"
+		aria-label="{{ aria_label }}"
+		onclick="{{ onclick }}">
+		{{ icon }}
+	</button>
+{% endmacro %}
+
+<nav class="nav-container">
+	<div class="container"><div class="row"><div class="col-12">
+		<div class="nav">
+			
+			<div class="nav__block">
+				{{ action(null, "Назад", "Переход на шаг назад", "arrow_back", "window.history.back()", false) }}
+				<h5 class="nav__title hidden">{{ header.title }}</h5>
+			</div>
+
+			<div class="nav__block">
+				{{ action("scrollUp", "К началу", "Переход к началу страницы", "keyboard_double_arrow_up", "scrollUp()", true) }}
+			</div>
+
+		</div>
+	</div></div></div>
+</nav>
