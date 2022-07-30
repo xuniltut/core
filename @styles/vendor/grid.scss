@@ -1,0 +1,53 @@
+@use 'sass:math';
+
+/// Конфигурация пакета Grid-v4 (@rx1310/grid-v4)
+/// @name grid-v4.config
+/// @author Haba Kudzaev (rx1310)
+/// @link https://github.com/rx1310/grid-v4 GitHub-репозиторий
+/// @author Bootstrap
+/// @link https://github.com/twbs GitHub Org
+/// @require {package} grid-v4 пакет `@rx1310/grid-v4`
+/// @prop {string} $grid-breakpoints.xs [0px] - брейкпоинт ширины экрана в 0px (сток)
+/// @prop {string} $grid-breakpoints.sm [576px] - брейкпоинт ширины экрана в 576px
+/// @prop {string} $grid-breakpoints.md [768px] - брейкпоинт ширины экрана в 768px
+/// @prop {string} $grid-breakpoints.lg [992px] - брейкпоинт ширины экрана в 992px
+/// @prop {string} $grid-breakpoints.xl [1200px] - брейкпоинт ширины экрана в 1200px
+/// @prop {string} $container-max-widths.xs [540px]
+/// @prop {string} $container-max-widths.md [720px]
+/// @prop {string} $container-max-widths.lg [960px]
+/// @prop {string} $container-max-widths.xl [1140px]
+/// @param {int} $grid-columns [12]
+/// @param {int} $grid-gutter-width [30px]
+/// @param {int} $grid-row-columns [6]
+/// @param {boolean} $enable-grid-classes [true]
+/// @param {int} $spacer [1rem]
+/// @param {boolean} $grid-genSpacersUtils [false]
+/// @param {boolean} $grid-genFlexUtils [false]
+/// @param {boolean} $grid-minimalReset [false]
+@use '../../node_modules/@rx1310/grid-v4/grid-v4' as * with (
+
+	$grid-breakpoints: (
+		xs: 0,
+		sm: 576px,
+		md: 768px,
+		lg: 992px,
+		xl: 1200px
+	),
+
+	$container-max-widths: (
+		sm: 540px,
+		md: 720px,
+		lg: 960px,
+		xl: 1140px
+	),
+
+	$grid-columns: 12,
+	$grid-gutter-width: 30px,
+	$grid-row-columns: 6,
+	$enable-grid-classes: true,
+	$spacer: 1rem,
+	$grid-genSpacersUtils: false,
+	$grid-genFlexUtils: false,
+	$grid-minimalReset: false,
+
+);
