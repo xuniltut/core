@@ -12,15 +12,15 @@
 /// @see {mixin} respond-to
 /// @see {mixin} keyframes
 /// @see {mixin} opacity
-/// @param {int} $border-radius - значение свойства `border-radius` (1)
+/// @param {int} $border-radius [0] - значение свойства `border-radius` (1)
 /// @prop {int | string} $bem.element [__] - префиксы для связки элемента и блока (2)
 /// @prop {int | string} $bem.modifier [--] - префиксы для модификатора (3)
-/// @prop {string} $breakpoints.xs - брейкпоинт ширины экрана в 0px (сток) (4)
-/// @prop {string} $breakpoints.sm - брейкпоинт ширины экрана в 576px (5)
-/// @prop {string} $breakpoints.md - брейкпоинт ширины экрана в 768px (6)
-/// @prop {string} $breakpoints.lg - брейкпоинт ширины экрана в 992px (7)
-/// @prop {string} $breakpoints.xl - брейкпоинт ширины экрана в 1200px (8)
-/// @prop {string} $breakpoints.xxl - брейкпоинт ширины экрана в 1400px (9)
+/// @prop {string} $breakpoints.xs [0px] - брейкпоинт ширины экрана в 0px (сток) (4)
+/// @prop {string} $breakpoints.sm [576px] - брейкпоинт ширины экрана в 576px (5)
+/// @prop {string} $breakpoints.md [768px] - брейкпоинт ширины экрана в 768px (6)
+/// @prop {string} $breakpoints.lg [992px] - брейкпоинт ширины экрана в 992px (7)
+/// @prop {string} $breakpoints.xl [1200px] - брейкпоинт ширины экрана в 1200px (8)
+/// @prop {string} $breakpoints.xxl [1400px] - брейкпоинт ширины экрана в 1400px (9)
 /// @prop {boolean} $keyframes.webkit [true] - генерация `keyframes` для браузера на базе движка WebKit (10)
 /// @prop {boolean} $keyframes.moz [true] - генерация `keyframes` для браузера на базе движка Mozilla Firefox (11)
 /// @prop {boolean} $keyframes.ms [true] - генерация `keyframes` для браузера на базе движка от Microsoft (12)
@@ -29,7 +29,7 @@
 /// @prop {boolean} $opacity.ie8 [true] - генерация CSS-правила `opacity` (или его имитация) для браузера Microsoft Internet Explorer 8+ (15)
 @forward '../node_modules/@rx1310/kalium19' with (
 
-	$border-radius: 8px, // 1
+	$border-radius: 0, // 1
 
 	$bem: (
 		element: "__", // 2
