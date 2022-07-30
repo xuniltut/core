@@ -1,0 +1,7 @@
+layout: "article.njk"
+head:
+  title: '%header'
+navbar:
+  title: '%header'
+  actionThemer: false
+  actionSearch: false

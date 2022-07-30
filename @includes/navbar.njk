@@ -15,10 +15,12 @@
 						{% endif %}
 
 						<h5 class="navbar__title hidden">
-							{% if navbar.title != 'default' %}
-								{{ navbar.title }}
-							{% else %}
+							{% if navbar.title == '%default' %}
 								{{ head.title }}
+							{% elif navbar.title == '%header' %}
+								{{ header.title }}
+							{% else %}
+								{{ navbar.title }}
 							{% endif %}
 						</h5>
 

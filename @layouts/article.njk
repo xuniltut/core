@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="theme-light">
+	<head>
+		{% include 'head.njk' %}
+	</head>
+	<body>
+
+		{% include 'navbar.njk' %}
+		{% include 'header.njk' %}
+
+		<main>
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						{{ content | safe }}
+					</div>
+				</div>
+			</div>
+		</main>
+
+		{% include 'footer.njk'%}
+		{% include 'scripts.njk' %}
+
+	</body>
+</html>

@@ -1,5 +1,5 @@
-# * {string} title [default]: заголовок панели
-title: default
+# * {string} title [%default]: заголовок панели
+title: '%default'
 
 # * {boolean} actionBack     : отображение кнопки "Назад"
 # * {boolean} actionScrollUp : отображение кнопки "К началу страницы"

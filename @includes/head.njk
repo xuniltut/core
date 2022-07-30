@@ -133,6 +133,8 @@
 
 {% if head.title == "TutLinux" %}
 	<title>{{ head.title }}</title>
+{% elif head.title == "%header" %}
+	<title>{{ header.title }} / TutLinux</title>
 {% else %}
 	<title>{{ head.title }} / TutLinux</title>
 {% endif %}
