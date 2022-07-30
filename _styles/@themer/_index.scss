@@ -1,0 +1,47 @@
+@use '../lib.kalium19' as k19;
+@use '../@variables/themes' as *;
+
+/// Режим работиы миксина `themer`
+/// @access private
+/// @type Boolean
+$singleTheme: true;
+
+/// @access private
+/// @type Boolean
+$consoleLog: true;
+
+/// Миксин, генерирующий кастомные свойства в `:root`
+/// @name themer
+/// @author Haba Kudzaev (rx1310)
+/// @link https://github.com/rx1310
+/// @param $map - массив данных (map)
+@mixin themer($map) {
+
+	@if $singleTheme {
+
+		:root {
+			@each $prop, $value in $map {
+				--#{$prop}: #{$value};
+			}
+		}
+
+	} @else {
+
+		@each $theme-name, $map in $map {
+			:root[class="theme-#{$theme-name}"] {
+				color-scheme: #{$theme-name};
+				@each $key, $value in $map {
+					--#{$key}: #{$value};
+				}
+			}
+		}
+
+	}
+
+	@if $consoleLog {
+		@warn '⚠ Themer: кастомные свойства сгенерированы!'
+	}
+
+};
+
+@include themer($default);

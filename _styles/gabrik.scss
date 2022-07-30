@@ -4,4 +4,5 @@
 @use 'sass:map';
 @use 'sass:string';
 
-@use 'base' as *;
+@use '@themer' as *;
+@use '@base' as *;
