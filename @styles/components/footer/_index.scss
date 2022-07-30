@@ -1,0 +1,53 @@
+@use '../../lib.kalium19' as k19;
+@use '../../vars' as *;
+@use '../../utils/mixins' as *;
+
+.footer {
+
+	@include k19.flex();
+	@include k19.align-items(flex-start);
+	@include k19.justify-content(flex-start);
+
+	gap: 1em;
+
+	&-container {
+		border-top: 1px solid var(--colorDivider);
+		padding-top: 1em;
+	}
+
+	&__icon {
+
+		@include filter-invert(100%);
+		@include k19.wh(70px);
+		@include k19.border-radius(100px);
+
+		margin: 0;
+		display: block;
+
+	}
+
+	&__title { margin-top: 0; }
+	&__subtitle { @include k19.opacity(.8); }
+
+	&__link {
+
+		color: inherit;
+		text-decoration: none;
+
+		&:not(:last-child) { margin-right: .5em; }
+
+		&__icon {
+
+			@include k19.wh(30px);
+			@include k19.transition(transform $transition-duration);
+
+			&:hover,
+			&:focus,
+			&:focus-visible { @include k19.transform(scale(1.150)); }
+			&:active        { @include k19.transform(scale(0.9));     }
+
+		}
+
+	}
+
+}

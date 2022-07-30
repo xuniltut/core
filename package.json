@@ -42,7 +42,6 @@
   },
   "dependencies": {
     "@rx1310/grid-v4": "^4.4.2",
-    "@rx1310/kalium19": "^4.1.2",
-    "sanitize.css": "^13.0.0"
+    "@rx1310/kalium19": "^4.1.2"
   }
 }

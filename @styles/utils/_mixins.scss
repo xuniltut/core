@@ -1,5 +1,23 @@
+@use '../lib.kalium19' as k19;
+
 @mixin position-sticky($side: "top", $sideOffset: 0) {
 	position: sticky;
 	position: -webkit-sticky;
 	#{$side}  : $sideOffset;
+}
+
+@mixin filter-invert($value) {
+	@include k19.prefixer(
+		filter,
+		invert($value),
+		webkit
+	)
+}
+
+@mixin background-blur($value) {
+	@include k19.prefixer(
+		backdrop-filter,
+		blur($value),
+		webkit
+	)
 }

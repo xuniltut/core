@@ -7,10 +7,12 @@
 *,
 *::before,
 *::after {
+	@include k19.box-sizing(border-box);
 	-webkit-touch-callout: none; // https://clck.ru/9HHvq
 }
 
 [data-hidden], [hidden] { @include k19.visually-hidden(); }
+
 [data-disabled], [disabled]:not([disabled="false"]) {
 	pointer-events: none; // https://developer.mozilla.org/ru/docs/Web/CSS/pointer-events
 	cursor: not-allowed;  // https://developer.mozilla.org/ru/docs/Web/CSS/cursor
@@ -24,11 +26,6 @@ hr {
 	border-top: 1px solid var(--colorDivider);
 }
 
-a {
-	color: var(--colorAccent);
-	&:hover { text-decoration: none; }
-}
-
 .mi {
 	@include k19.flex();
 	@include k19.align-items(center);
@@ -36,8 +33,4 @@ a {
 	.material-symbols-outlined,
 	.material-symbols-rounded,
 	.material-symbols-sharp { margin-right: 8px; }
-}
-
-ol {
-	padding-inline-start: 1em;
 }

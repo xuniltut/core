@@ -52,7 +52,7 @@ module.exports = function(eleventy) {
 				removeComments             : true,
 				removeScriptTypeAttributes : true,
 				collapseWhitespace         : true,
-				collapseInlineTagWhitespace: true,
+				collapseInlineTagWhitespace: false,
 				sortAttributes             : true,
 				sortClassName              : true
       });
