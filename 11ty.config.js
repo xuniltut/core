@@ -1,5 +1,6 @@
-const pluginMarkdownIt            = require('markdown-it');
-const pluginYAML                  = require("js-yaml");
+const pluginMarkdownIt   = require('markdown-it');
+const pluginYAML         = require("js-yaml");
+const pluginHTMLMinifier = require("html-minifier");
 
 // конфигурация Eleventy (11ty)
 module.exports = function(eleventy) {
@@ -38,6 +39,31 @@ module.exports = function(eleventy) {
 		open     : true,
 		browser  : ["chromium-browser"] // "google chrome", "firefox"
 	});
+
+	eleventy.addTransform("pluginHTMLMinifier", function(content, outputPath) {
+
+    if(outputPath && outputPath.endsWith(".html")) {
+
+      let output = pluginHTMLMinifier.minify(content, {
+				minifyCSS                  : true,
+				minifyJS                   : true,
+				minifyURLs                 : true,
+				useShortDoctype            : true,
+				removeComments             : true,
+				removeScriptTypeAttributes : true,
+				collapseWhitespace         : true,
+				collapseInlineTagWhitespace: true,
+				sortAttributes             : true,
+				sortClassName              : true
+      });
+
+      return output;
+			
+    }
+
+    return content;
+
+  });
 
 	return {
 		dir: {

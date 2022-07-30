@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "description": "Основной репозиторий проекта TutLinux, который содержит в себе все стили, конфигурации, шаблоны... короче говоря, всё кроме контента.",
   "private": true,
-	"scripts": {
+  "scripts": {
     "start": "cross-env ELEVENTY_ENV=dev run-p watch:11ty watch:sass",
     "build": "cross-env ELEVENTY_ENV=prod run-s build:sass build:11ty",
     "build:11ty": "npx @11ty/eleventy --config=11ty.config.js",
@@ -33,6 +33,7 @@
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "cross-env": "^7.0.3",
+    "html-minifier": "^4.0.0",
     "js-yaml": "^4.1.0",
     "markdown-it": "^13.0.1",
     "npm-run-all": "^4.1.5",
