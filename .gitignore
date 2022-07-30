@@ -1,3 +1,5 @@
+dist/
+
 # SASS
 .sass-cache/
 *.css.map
