@@ -5,13 +5,13 @@ const pluginHTMLMinifier = require("html-minifier");
 // конфигурация Eleventy (11ty)
 module.exports = function(eleventy) {
 
-	eleventy.addPassthroughCopy('docs/**/!(*yml*)*.(png|jpg|webp)');
+	eleventy.addPassthroughCopy('articles/**/!(*yml*)*.(png|jpg|webp)');
 
 	eleventy.addDataExtension("yaml", contents => pluginYAML.load(contents));
 	eleventy.addDataExtension('yml', contents => pluginYAML.load(contents));
 
-	eleventy.addPassthroughCopy({'@assets': 'assets'});
-	eleventy.addPassthroughCopy({'@scripts': 'scripts'});
+	eleventy.addPassthroughCopy({'_assets': 'assets'});
+	eleventy.addPassthroughCopy({'_scripts': 'scripts'});
 
 	eleventy.setUseGitIgnore(false);
 	eleventy.setQuietMode(true);
@@ -58,7 +58,7 @@ module.exports = function(eleventy) {
       });
 
       return output;
-			
+
     }
 
     return content;
@@ -69,9 +69,9 @@ module.exports = function(eleventy) {
 		dir: {
 			input   : '.',
 			output  : 'dist',
-			includes: '@includes',
-			layouts : '@layouts',
-			data    : "@data"
+			includes: '_includes',
+			layouts : '_layouts',
+			data    : "_data"
 		},
 		templateFormats    : ['md', 'njk'],
 		htmlTemplateEngine : 'njk',

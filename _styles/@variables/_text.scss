@@ -1,10 +1,3 @@
-/// Уветовая палитра темы сайта
-/// @type Map
-/// @access public
-$colors: (
-	background: #000
-);
-
 /// Стандартный размер шрифта
 /// @type String | Int
 /// @access public
@@ -57,16 +50,3 @@ $font-size_h5: $font-size * 1.25;
 /// @access public
 /// @require {variable} $font-size
 $font-size_h6: $font-size;
-
-/// Продолжительность перехода `transition`
-/// @type Int
-/// @access public
-$transition-duration: .3s;
-
-/// Значение `z-index` для элементов
-/// @type Map
-/// @access public
-/// @prop {int} $z-indexes.navbar [1] - значение для элемента navbar
-$z-indexes: (
-	navbar: 1
-);

@@ -9,8 +9,8 @@
     "build:11ty": "npx @11ty/eleventy --config=11ty.config.js",
     "build:sass": "sass @styles/:dist/styles/ --style compressed",
     "watch:11ty": "npx @11ty/eleventy --serve --config=11ty.config.js",
-    "watch:sass": "sass --no-source-map @styles/:dist/styles/ --watch",
-    "watch:sass-sourcemap": "sass @styles/:dist/styles/ --watch"
+    "watch:sass": "sass --no-source-map _styles/:dist/styles/ --watch",
+    "watch:sass-sourcemap": "sass _styles/:dist/styles/ --watch"
   },
   "repository": {
     "type": "git",
