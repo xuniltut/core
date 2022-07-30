@@ -1,0 +1,65 @@
+/// Стандартный размер шрифта
+/// @type String | Int
+/// @access public
+$font-size: 1rem;
+
+/// Большой размер шрифта
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_lg: $font-size * 1.25;
+
+/// Маленький размер шрифта
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_sm: $font-size * .875;
+
+/// Размер шрифта для заголовока `h1`
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_h1: $font-size * 2.5;
+
+/// Размер шрифта для заголовока `h2`
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_h2: $font-size * 2;
+
+/// Размер шрифта для заголовока `h3`
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_h3: $font-size * 1.75;
+
+/// Размер шрифта для заголовока `h4`
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_h4: $font-size * 1.5;
+
+/// Размер шрифта для заголовока `h5`
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_h5: $font-size * 1.25;
+
+/// Размер шрифта для заголовока `h6`
+/// @type String | Int
+/// @access public
+/// @require {variable} $font-size
+$font-size_h6: $font-size;
+
+/// Продолжительность перехода `transition`
+/// @type Int
+/// @access public
+$transition-duration: .3s;
+
+/// Значение `z-index` для элементов
+/// @type Map
+/// @access public
+/// @prop {int} $z-indexes.navbar [1] - значение для элемента navbar
+$z-indexes: (
+	navbar: 1
+);
