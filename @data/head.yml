@@ -13,13 +13,15 @@ description   : "TutLinux (ТЛ, TL) — это открытый проект (�
 author        : "Haba Kudzaev (rx1310)"
 app_name      : "TutLinux"
 robots        : "index,follow" # `null`, если не хотите использовать
-theme_color   : "#000"
+theme_color   : "#000000"
 color_scheme  : "dark"
 
 # ? Аналитика
-# * {string} google_analytics: ID GA (напр.: UA-12345678-9)
-# * {string} yandex_metrika  : ID Yandex.Metrika (напр.: 12345678)
-google_analytics: null
+# * {string}  google_analytics   : ID GA (напр.: UA-12345678-9)
+# * {boolean} google_analytics_v4: новая версия скрипта GA
+# * {string}  yandex_metrika     : ID Yandex.Metrika (напр.: 12345678)
+google_analytics: G-QK9CJGZBLZ
+google_analytics_v4: true
 yandex_metrika  : null
 
 # ? facebook open graph

@@ -12,6 +12,6 @@
 	"Template Include": {
 		"scope": "njk",
 		"prefix": "include",
-		"body": ["{% include '$1.njk'%}$2"]
+		"body": ["{% include '$1.njk' %}$2"]
 	}
 }

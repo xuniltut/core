@@ -1,12 +1,14 @@
+@use 'lib.kalium19' as k19;
+
 /// Массив данных о цветовой палитре
 /// @type Map
 /// @access public
 /// @see {mixin} themer
-$default: (
+$theme: (
 	colorBackground: #000,
-	colorFont: #fff,
-	colorAccent: none,
-	colorDivider: none
+	colorFont: k19.$grey--A100,
+	colorAccent: k19.$light-green--700, // TODO: подобрать более подходящий цвет акцента
+	colorDivider: k19.$grey--900
 );
 
 /// Продолжительность перехода `transition`

@@ -1,0 +1,31 @@
+@use '../../lib.kalium19' as k19;
+
+.header {
+
+	&-container {
+		padding: 1em 0;
+		border-bottom: 1px solid var(--colorDivider);
+	}
+
+	&__icon {
+
+		@include k19.wh(100px);
+		@include k19.border-radius(100px);
+
+		float: right;
+		margin: 0 0 1em 1em;
+
+		filter: invert(100%); // TODO: удалить данное правило для прода
+
+	}
+
+	&__title,
+	&__subtitle {
+		margin-top: 0;
+	}
+
+	&__subtitle {
+		@include k19.opacity(.8);
+	}
+
+}

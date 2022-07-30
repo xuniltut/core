@@ -8,7 +8,7 @@ $singleTheme: true;
 
 /// @access private
 /// @type Boolean
-$consoleLog: true;
+$consoleLog: false;
 
 /// Миксин, генерирующий кастомные свойства в `:root`
 /// @name themer
@@ -44,4 +44,4 @@ $consoleLog: true;
 
 };
 
-@include themer($default);
+@include themer($theme);

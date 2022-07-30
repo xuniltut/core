@@ -1,0 +1,35 @@
+<header class="header-container">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="header">
+
+					{# * иконка хедера #}
+					{% if header.iconSrc != null %}
+						<img
+							loading="lazy"
+							src="{{ header.iconSrc }}"
+							{% if header.iconAlt != null %}
+								alt="{{ header.iconAlt }}"
+								title="{{ header.iconAlt }}"
+							{% endif %}
+							class="header__icon">
+					{% endif %}
+
+					{# * заголовок хедера #}
+					{% if header.title != null %}
+						<h1 class="header__title">{{ header.title }}</h1>
+					{% else %}
+						<h1 class="header__title">TLE1 :(</h1>
+					{% endif %}
+
+					{# * подзаголовок хедера #}
+					{% if header.subtitle != null %}
+						<p class="header__subtitle">{{ header.subtitle }}</p>
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
