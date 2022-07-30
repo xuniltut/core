@@ -1,0 +1,134 @@
+{% include 'styles.njk'%}
+
+<meta charset="utf-8">                                               {# * определяет кодировку веб-сайта, стандартом является utf-8 #}
+<meta name="viewport" content="width=device-width, initial-scale=1"> {# * настройки viewport, связанные с мобильной отзывчивостью #}
+
+{#
+	* `width=device-width` - физическая ширина устройства (отлично подходит для мобильных устройств!)
+	* `initial-scale=1`    - начальный масштаб, 1 означает отсутствие масштабирования
+#}
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">      {# * заставить IE 8/9/10 использовать свой последний движок рендеринга #}
+<meta name="renderer" content="webkit|ie-comp|ie-stand">   {# * выбор порядка движков рендеринга для 360 Browser #}
+<meta name="HandheldFriendly" content="true">              {# * подсказывает, что сайт оптимизирован для мобильных устройств #}
+<meta name="description" content="{{ head.description }}"> {# * короткое описание страницы (ограничение — 150 символов) #}
+
+{% if head.theme_color != null %}
+	<meta name="theme-color" content="{{ head.theme_color }}">
+	<meta name="msapplication-TileColor" content="{{ head.theme_color }}">
+	<meta name="apple-mobile-web-app-status-bar-style" content="{{ head.theme_color }}">
+{% endif %}
+
+{% if head.color_scheme != null %}
+	<meta name="color-scheme" content="{{ head.color_scheme }}">
+{% endif %}
+
+{% if meta.env == 'prod' %}
+
+	<meta name="author" content="{{ head.author }}">    {# * автор документа #}
+	<meta name="copyright" content="{{ head.author }}"> {# * принадлежность авторских прав #}
+	<meta name="creator" content="{{ head.author }}">   {# * создатель документа #}
+
+	{% if head.robots != null %}
+		<meta name="robots" content="{{ head.robots }}">    {# * все поисковые системы #}
+		<meta name="googlebot" content="{{ head.robots }}"> {# * указание отдельно для Google #}
+		<meta name="bingbot" content="{{ head.robots }}">   {# * указание отдельно для Bing #}
+	{% endif %}
+
+	{% if head.app_name != null %}
+
+		{# ? название приложения #}
+		<meta name="application-name" content="{{ head.app_name }}">
+		<meta name="apple-mobile-web-app-title" content="{{ head.app_name }}">
+
+		{# ? добавить на домашний экран #}
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+
+	{% endif %}
+
+	{% if head.open_graph.enable != false %}
+		<meta property="og:url" content="{{ head.open_graph.url }}">
+		<meta property="og:type" content="{{ head.open_graph.type }}">
+		<meta property="og:title" content="{{ head.open_graph.title }}">
+		<meta property="og:image" content="{{ head.open_graph.image }}">
+		<meta property="og:image:alt" content="{{ head.open_graph.image_alt }}">
+		<meta property="og:description" content="{{ head.open_graph.description }}">
+		<meta property="og:site_name" content="{{ head.open_graph.site_name }}">
+		<meta property="og:locale" content="{{ head.lang }}">
+		<meta property="article:author" content="{{ head.author }}">
+	{% endif %}
+
+	{% if head.twitter.enable != false %}
+		<meta name="twitter:card" content="{{ head.twitter.card }}">
+		<meta name="twitter:site" content="{{ head.twitter.site }}">
+		<meta name="twitter:creator" content="{{ head.twitter.creator }}">
+		<meta name="twitter:url" content="{{ head.twitter.url }}">
+		<meta name="twitter:title" content="{{ head.twitter.title }}">
+		<meta name="twitter:description" content="{{ head.twitter.description }}">
+		<meta name="twitter:image" content="{{ head.twitter.image }}">
+		<meta name="twitter:image:alt" content="{{ head.twitter.image_alt }}">
+		<meta name="twitter:dnt" content="{{ 'on' if head.twitter.dnt == true else 'off' }}">
+	{% endif %}
+
+	{% if head.browser_qq != null %}
+		<meta name="x5-orientation" content="{{ head.browser_qq.orientation }}"> {# * фиксирует экран в заданной ориентации #}
+		<meta name="x5-fullscreen" content="{{ head.browser_qq.fullscreen }}">   {# * запрет отображения этого документа в полноэкранном режиме #}
+		<meta name="x5-page-mode" content="{{ head.browser_qq.page_mode }}">     {# * документ будет отображаться в "режиме приложения" (полноэкранный режим и т.д.)  #}
+	{% endif %}
+
+	{% if head.browser_uc %}
+		<meta name="screen-orientation" content="{{ head.browser_uc.orientation }}">
+		<meta name="full-screen" content="{{ head.browser_uc.fullscreen }}">
+		<meta name="imagemode" content="{{ head.browser_uc.imagemode }}">
+		<meta name="browsermode" content="{{ head.browser_uc.browsermode }}">
+		<meta name="nightmode" content="{{ 'enable' if head.browser_uc.nightmode == true else 'disable' }}">
+		<meta name="layoutmode" content="{{ head.browser_uc.layoutmode }}">
+		<meta name="wap-font-scale" content="{{ 'yes' if head.browser_uc.wap_font_scale == true else 'no' }}">
+	{% endif %}
+
+	{% if head.google_analytics != null %}
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+							m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+					})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', '{{ head.google_analytics }}', 'auto');
+			ga('send', 'pageview');
+		</script>
+	{% endif %}
+
+	{% if head.yandex_metrika != null %}
+		<script>
+
+			(function (d, w, c) {
+
+				(w[c] = w[c] || []).push(function() {
+					try {
+						w.yaCounter{{ head.yandex_metrika }} = new Ya.Metrika({
+							id:{{ head.yandex_metrika }},
+							clickmap: true,
+							trackLinks: true,
+							accurateTrackBounce: true
+						});
+					} catch(e) { }
+				});
+
+				var n = d.getElementsByTagName("script")[0],
+						s = d.createElement("script"),
+						f = function () { n.parentNode.insertBefore(s, n); };
+						s.type = "text/javascript";
+						s.async = true;
+						s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+				if (w.opera == "[object Opera]") {
+						d.addEventListener("DOMContentLoaded", f, false);
+				} else { f(); }
+			})(document, window, "yandex_metrika_callbacks");
+
+		</script>
+	{% endif %}
+
+{% endif %}
+
+<title>{{ head.title }}</title>
