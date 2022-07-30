@@ -3,7 +3,15 @@
   "version": "3.0.0",
   "description": "Основной репозиторий проекта TutLinux, который содержит в себе все стили, конфигурации, шаблоны... короче говоря, всё кроме контента.",
   "private": true,
-  "scripts": {},
+	"scripts": {
+    "start": "cross-env ELEVENTY_ENV=dev run-p watch:11ty watch:sass",
+    "build": "cross-env ELEVENTY_ENV=prod run-s build:sass build:11ty",
+    "build:11ty": "npx @11ty/eleventy --config=11ty.config.js",
+    "build:sass": "sass @styles/:dist/styles/ --style compressed",
+    "watch:11ty": "npx @11ty/eleventy --serve --config=11ty.config.js",
+    "watch:sass": "sass --no-source-map @styles/:dist/styles/ --watch",
+    "watch:sass-sourcemap": "sass @styles/:dist/styles/ --watch"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xuniltut/core.git"
