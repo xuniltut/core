@@ -10,8 +10,8 @@ module.exports = function(eleventy) {
 	eleventy.addDataExtension("yaml", contents => pluginYAML.load(contents));
 	eleventy.addDataExtension('yml', contents => pluginYAML.load(contents));
 
-	eleventy.addPassthroughCopy({'_assets': 'assets'});
-	eleventy.addPassthroughCopy({'_scripts': 'scripts'});
+	eleventy.addPassthroughCopy({'@assets': 'assets'});
+	eleventy.addPassthroughCopy({'@scripts': 'scripts'});
 
 	eleventy.setUseGitIgnore(false);
 	eleventy.setQuietMode(true);
@@ -69,9 +69,9 @@ module.exports = function(eleventy) {
 		dir: {
 			input   : '.',
 			output  : 'dist',
-			includes: '_includes',
-			layouts : '_layouts',
-			data    : "_data"
+			includes: '@includes',
+			layouts : '@layouts',
+			data    : "@data"
 		},
 		templateFormats    : ['md', 'njk'],
 		htmlTemplateEngine : 'njk',
