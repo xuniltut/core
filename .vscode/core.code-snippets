@@ -1,0 +1,17 @@
+{
+	"Условие ENV": {
+		"scope": "njk",
+		"prefix": "env",
+		"body": [
+			"{% if meta.env == '${1|dev,prod|}' %}",
+			"$2",
+			"{% endif %}"
+		]
+	},
+
+	"Template Include": {
+		"scope": "njk",
+		"prefix": "include",
+		"body": ["{% include '$1.njk'%}$2"]
+	}
+}

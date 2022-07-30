@@ -1,0 +1,15 @@
+{
+
+	"git.ignoreLimitWarning"           : true,
+	"npm-scripts.showStartNotification": false,
+
+	"files.exclude": {
+		".github/"       : true,
+		"node_modules"   : true,
+		"package-lock.*" : true,
+		".gitignore"     : true,
+		"LICENSE"        : true,
+		".editorconfig"  : true,
+	}
+
+}
